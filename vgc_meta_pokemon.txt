@@ -1,0 +1,754 @@
+    VGC DOUBLES META POKEMON (50) - Scarlet/Violet Terastallization era
+Base stats order: HP / Atk / Def / SpA / SpD / Spe
+Note: Usage/tier reflects general competitive standing; exact rankings shift by regulation/ladder month.
+Synergies list 1-2 partner Pokemon only (not full teams).
+
+==================================================
+1. INCINEROAR
+Base Stats: 95 / 115 / 90 / 80 / 90 / 60
+Roles: Fake Out Support, Intimidate Pivot, Redirector-lite
+Abilities: Intimidate
+Common Items: Safety Goggles, Sitrus Berry, Assault Vest, Shuca Berry
+Common Moves: Fake Out, Parting Shot, Flare Blitz, Knock Off, Will-O-Wisp, Snarl, Taunt
+Preferred Tera Types: Grass, Ghost, Water, Fire
+Strengths: Intimidate + Fake Out + Parting Shot give constant tempo; bulky; fits almost any team
+Weaknesses: Slow; weak to Ground, Water, Rock, Fighting; low damage output
+Checks & Counters: Water/Ground types, Defiant/Competitive/Mirror Armor/Clear Body/Inner Focus (ignore Intimidate/Fake Out); Ghost types vs Fake Out | Pokemon Counters: Landorus-Therian, Urshifu-Rapid-Strike
+Synergies / Teammates: Rillaboom, Flutter Mane
+Playstyle: Pivot-and-chip support; Fake Out turn 1, Intimidate switching, Parting Shot to reset momentum
+Usage / Meta Tier: S (top usage staple)
+
+==================================================
+2. RILLABOOM
+Base Stats: 100 / 125 / 90 / 60 / 70 / 85
+Roles: Grassy Terrain Attacker, Fake Out + Priority Support
+Abilities: Grassy Surge
+Common Items: Assault Vest, Miracle Seed, Choice Band, Sitrus Berry
+Common Moves: Grassy Glide, Fake Out, Wood Hammer, High Horsepower, U-turn, Knock Off, Drum Beating
+Preferred Tera Types: Fire, Water, Grass, Poison
+Strengths: Priority Grassy Glide in terrain; terrain halves Earthquake and heals; strong Fake Out
+Weaknesses: Weak to Fire, Flying, Ice, Poison, Bug; Wood Hammer recoil
+Checks & Counters: Flying types (Tornadus, Pelipper), Fire types (Torkoal, Chi-Yu), Poison types; Heat/Flying Tera | Pokemon Counters: Tornadus, Torkoal
+Synergies / Teammates: Incineroar, Urshifu-Rapid-Strike
+Playstyle: Terrain setter that doubles as a fast, priority-based damage dealer
+Usage / Meta Tier: S
+
+==================================================
+3. FLUTTER MANE
+Base Stats: 55 / 55 / 55 / 135 / 135 / 135
+Roles: Fast Special Attacker, Speed Control (Icy Wind/Tailwind), Choice Scarf Cleaner
+Abilities: Protosynthesis
+Common Items: Booster Energy, Choice Specs, Focus Sash, Choice Scarf
+Common Moves: Moonblast, Shadow Ball, Dazzling Gleam, Icy Wind, Protect, Taunt, Thunderbolt
+Preferred Tera Types: Fairy, Ghost, Grass, Water
+Strengths: Fastest threat with huge special power; Ghost/Fairy coverage hits nearly everything
+Weaknesses: Extremely frail; low HP/defenses; weak to Ghost, Steel, Ground, Fire, Dark
+Checks & Counters: Fake Out, Dark types (Kingambit, Grimmsnarl), Steel types, priority moves like Sucker Punch | Pokemon Counters: Kingambit, Grimmsnarl
+Synergies / Teammates: Incineroar, Amoonguss
+Playstyle: Glass-cannon sweeper that thrives behind Fake Out and redirection
+Usage / Meta Tier: S
+
+==================================================
+4. URSHIFU-RAPID-STRIKE
+Base Stats: 100 / 130 / 100 / 63 / 60 / 97
+Roles: Physical Wallbreaker, Water/Fighting Attacker, Surging Strikes Crit Sweeper
+Abilities: Unseen Fist
+Common Items: Mystic Water, Focus Sash, Choice Scarf, Shuca Berry
+Common Moves: Surging Strikes, Close Combat, Aqua Jet, U-turn, Protect, Detect, Ice Spinner
+Preferred Tera Types: Water, Fighting, Grass, Fire
+Strengths: Always-crit Surging Strikes ignores boosts and breaks Protect; Aqua Jet priority
+Weaknesses: Weak to Flying, Psychic, Fairy, Electric, Grass; Close Combat drops defenses
+Checks & Counters: Flying/Fairy/Psychic types (Tornadus, Flutter Mane, Farigiraf), Intimidate, Fake Out; Amoonguss redirect | Pokemon Counters: Tornadus, Flutter Mane
+Synergies / Teammates: Rillaboom, Tornadus
+Playstyle: Consistent heavy hitter, hits through Protect, wins mirror and trades via priority
+Usage / Meta Tier: S
+
+==================================================
+5. AMOONGUSS
+Base Stats: 114 / 85 / 70 / 85 / 80 / 30
+Roles: Redirection Support (Rage Powder), Spore Pivot, Sleep Support
+Abilities: Regenerator (Effect Spore)
+Common Items: Rocky Helmet, Sitrus Berry, Covert Cloak, Mental Herb
+Common Moves: Rage Powder, Spore, Pollen Puff, Clear Smog, Protect, Sludge Bomb
+Preferred Tera Types: Water, Dark, Fairy, Steel
+Strengths: Redirects attacks for sweepers; Spore sleeps threats; strong Regenerator pivot
+Weaknesses: Weak to Fire, Flying, Ice, Psychic; slow; low damage
+Checks & Counters: Fire/Flying/Poison-spamming, Grass-immune ability Overcoat, Safety Goggles, Fire coverage and Taunt | Pokemon Counters: Torkoal, Chi-Yu
+Synergies / Teammates: Flutter Mane, Iron Hands
+Playstyle: Defensive supporter who protects partners and disrupts opposing plans
+Usage / Meta Tier: S
+
+==================================================
+6. LANDORUS-THERIAN
+Base Stats: 89 / 145 / 90 / 105 / 80 / 91
+Roles: Intimidate Pivot, Physical Attacker, Spread-Damage Attacker
+Abilities: Intimidate
+Common Items: Choice Scarf, Assault Vest, Life Orb, Sitrus Berry
+Common Moves: Earthquake, Rock Slide, U-turn, Stomping Tantrum, Protect, Sludge Bomb, Taunt
+Preferred Tera Types: Steel, Water, Flying, Ghost
+Strengths: Intimidate on switch, strong bulk and speed, hits very hard
+Weaknesses: Weak to Water, Ice, Grass; Earthquake hits partners
+Checks & Counters: Ice Beam/Icy Wind, Water types, Intimidate immunity (Inner Focus/Clear Body), Flying-types and Levitate | Pokemon Counters: Iron Bundle, Rillaboom
+Synergies / Teammates: Tornadus, Amoonguss
+Playstyle: Pivot that either supports with Intimidate or breaks teams with Earthquake
+Usage / Meta Tier: S
+
+==================================================
+7. TORNADUS
+Base Stats: 79 / 115 / 70 / 125 / 80 / 111
+Roles: Tailwind Speed Control, Prankster Support (Taunt, Rain Dance), Special Attacker
+Abilities: Prankster (Defiant)
+Common Items: Focus Sash, Covert Cloak, Sitrus Berry, Safety Goggles
+Common Moves: Tailwind, Bleakwind Storm, Taunt, Rain Dance, Protect, Icy Wind, Heat Wave
+Preferred Tera Types: Ghost, Water, Steel, Flying
+Strengths: Priority Tailwind/Taunt; strong spread damage; great speed control
+Weaknesses: Frail; weak to Electric, Rock, Ice; Prankster fails vs Dark types
+Checks & Counters: Dark types (Grimmsnarl, Kingambit), Chi-Yu, Electric/Rock Moves; priority attackers like Fake Out | Pokemon Counters: Grimmsnarl, Tyranitar
+Synergies / Teammates: Urshifu-Rapid-Strike, Landorus-Therian
+Playstyle: Speed control support that sets Tailwind and Taunt turns before dying or Protecting
+Usage / Meta Tier: A+
+
+==================================================
+8. OGERPON-WELLSPRING
+Base Stats: 80 / 120 / 84 / 60 / 96 / 110
+Roles: Physical Attacker, Rain Booster, Follow Me Support
+Abilities: Water Absorb
+Common Items: Wellspring Mask (fixed)
+Common Moves: Ivy Cudgel, Follow Me, Horn Leech, Spiky Shield, Play Rough, Knock Off, U-turn
+Preferred Tera Types: Water, Grass (Terastallized always)
+Strengths: Strong Terastallized offense, fast, Follow Me for redirection, resists Water/Ground
+Weaknesses: Weak to Flying, Poison, Bug, Ice, Fire (Tera dependent); one-time Tera
+Checks & Counters: Flying types (Tornadus), Fire attacks, Poison types; Tera Blast Fire | Pokemon Counters: Tornadus, Torkoal
+Synergies / Teammates: Incineroar, Pelipper
+Playstyle: Fast Tera-ing attacker that redirects and applies pressure
+Usage / Meta Tier: A+
+
+==================================================
+9. OGERPON-HEARTHFLAME
+Base Stats: 80 / 120 / 84 / 60 / 96 / 110
+Roles: Sun-based Physical Attacker, Follow Me Support
+Abilities: Mold Breaker
+Common Items: Hearthflame Mask (fixed)
+Common Moves: Ivy Cudgel, Follow Me, Horn Leech, Spiky Shield, Wood Hammer, Knock Off, Swords Dance
+Preferred Tera Types: Fire (Terastallized always)
+Strengths: Huge damage with Ivy Cudgel; Mold Breaker ignores Fake Out-blocking abilities
+Weaknesses: Weak to Water, Rock, Flying, Ground; one-time Tera
+Checks & Counters: Water types, Rock/Ground attackers, Rain | Pokemon Counters: Urshifu-Rapid-Strike, Landorus-Therian
+Synergies / Teammates: Torkoal, Incineroar
+Playstyle: Brute force attacker that benefits from Sun support
+Usage / Meta Tier: A
+
+==================================================
+10. URSALUNA-BLOODMOON
+Base Stats: 113 / 70 / 120 / 135 / 65 / 52
+Roles: Special Wallbreaker, Trick Room Attacker
+Abilities: Mind's Eye
+Common Items: Assault Vest, Life Orb, Choice Specs, Silk Scarf
+Common Moves: Blood Moon, Hyper Voice, Earth Power, Vacuum Wave, Protect, Swords Dance
+Preferred Tera Types: Normal, Ground, Fire
+Strengths: Massive Special Attack; Blood Moon spams freely; strong bulk
+Weaknesses: Weak to Fighting, Ground, Water; no real spreading; slow
+Checks & Counters: Fighting types (Iron Hands), Ghost-Tera, Fake Out, Armor Tail | Pokemon Counters: Iron Hands, Annihilape
+Synergies / Teammates: Farigiraf, Torkoal
+Playstyle: Hard-hitting Trick Room-friendly special bear
+Usage / Meta Tier: A
+
+==================================================
+11. CHIEN-PAO
+Base Stats: 80 / 120 / 80 / 90 / 65 / 135
+Roles: Fast Physical Sweeper, Sword of Ruin Support, Snow Offense
+Abilities: Sword of Ruin
+Common Items: Focus Sash, Life Orb, Choice Band, Clear Amulet
+Common Moves: Icicle Crash, Sucker Punch, Sacred Sword, Protect, Ice Shard, Throat Chop
+Preferred Tera Types: Dark, Fighting, Ice, Ghost
+Strengths: Huge speed and offense; Sword of Ruin lowers Defense of all other Pokemon
+Weaknesses: Frail; weak to Fire, Fighting, Rock, Steel
+Checks & Counters: Fire types (Torkoal, Chi-Yu), Fighting types, Steel types, Fake Out | Pokemon Counters: Torkoal, Iron Hands
+Synergies / Teammates: Rillaboom, Incineroar
+Playstyle: Fast Snow Warning sweeper that uses Sword of Ruin to break walls
+Usage / Meta Tier: A
+
+==================================================
+12. CHI-YU
+Base Stats: 55 / 80 / 80 / 135 / 120 / 100
+Roles: Fire/Dark Special Attacker, Spread Fire Blaster, Beads of Ruin Support
+Abilities: Beads of Ruin
+Common Items: Choice Specs, Choice Scarf, Focus Sash, Life Orb
+Common Moves: Heat Wave, Dark Pulse, Overheat, Snarl, Protect, Flamethrower
+Preferred Tera Types: Fire, Dark, Ghost
+Strengths: Strong special coverage; Beads of Ruin reduces SpD for the whole field
+Weaknesses: Weak to Water, Fighting, Ground, Rock
+Checks & Counters: Ground/Water types, Fake Out, Fighting moves, Rock Slide | Pokemon Counters: Landorus-Therian, Urshifu-Rapid-Strike
+Synergies / Teammates: Torkoal, Rillaboom
+Playstyle: Blast-everything special sweeper ideal for fast offense
+Usage / Meta Tier: A
+
+==================================================
+13. IRON HANDS
+Base Stats: 154 / 140 / 108 / 50 / 68 / 50
+Roles: Bulky Attacker, Fake Out + Wide Guard Support, Trick Room Attacker
+Abilities: Quark Drive
+Common Items: Assault Vest, Booster Energy, Sitrus Berry
+Common Moves: Drain Punch, Wild Charge, Fake Out, Heavy Slam, Close Combat, Volt Switch, Protect
+Preferred Tera Types: Grass, Water, Fighting
+Strengths: Huge HP, strong damage, Fake Out; Drain Punch heals
+Weaknesses: Weak to Fighting, Ground, Fire, Psychic; slow
+Checks & Counters: Ground/Fire types, Psychic types (Farigiraf), Landorus Intimidate | Pokemon Counters: Landorus-Therian, Farigiraf
+Synergies / Teammates: Amoonguss, Farigiraf
+Playstyle: Tanky attacker who attacks and supports via Fake Out
+Usage / Meta Tier: A
+
+==================================================
+14. FARIGIRAF
+Base Stats: 120 / 90 / 70 / 110 / 70 / 60
+Roles: Trick Room Setter, Psychic Spammer, Armor Tail Support
+Abilities: Armor Tail (Cud Chew)
+Common Items: Sitrus Berry, Safety Goggles, Electric Seed, Choice Specs
+Common Moves: Trick Room, Psychic, Hyper Voice, Helping Hand, Protect, Foul Play, Dazzling Gleam
+Preferred Tera Types: Fairy, Water, Dark, Normal
+Strengths: Blocks priority; sets Trick Room; deals heavy spread/Psychic damage
+Weaknesses: Weak to Bug, Dark, Ghost; slow
+Checks & Counters: Dark/Ghost types, Taunt, Fake Out, Dark Tera | Pokemon Counters: Kingambit, Grimmsnarl
+Synergies / Teammates: Ursaluna-Bloodmoon, Torkoal
+Playstyle: Trick Room setter that protects teammates from priority
+Usage / Meta Tier: A+ (top Trick Room setter)
+
+==================================================
+15. TORKOAL
+Base Stats: 70 / 85 / 140 / 85 / 70 / 20
+Roles: Sun Setter, Eruption Spammer, Trick Room Special Attacker
+Abilities: Drought
+Common Items: Charcoal, Choice Specs, Sitrus Berry, Charcoal
+Common Moves: Eruption, Heat Wave, Earth Power, Protect, Yawn, Body Press, Overheat
+Preferred Tera Types: Fire, Grass, Water
+Strengths: Auto-Sun; Eruption deals massive spread damage; good defense
+Weaknesses: Weak to Water, Rock, Ground; very slow; low HP
+Checks & Counters: Water types, Rock attackers, Fake Out, Rain/Sandstorm override | Pokemon Counters: Urshifu-Rapid-Strike, Pelipper
+Synergies / Teammates: Ogerpon-Hearthflame, Chi-Yu
+Playstyle: Slow Sun setter that blasts the field
+Usage / Meta Tier: A
+
+==================================================
+16. GHOLDENGO
+Base Stats: 87 / 60 / 95 / 133 / 91 / 84
+Roles: Special Attacker, Bulky Pivot, Good as Fire/Ghost-immune
+Abilities: Good as Gold
+Common Items: Choice Specs, Choice Scarf, Air Balloon, Life Orb
+Common Moves: Make It Rain, Shadow Ball, Nasty Plot, Protect, Trick, Thunderbolt, Focus Blast
+Preferred Tera Types: Water, Fairy, Fire, Flying
+Strengths: Immune to status/Fake Out-style opposing moves; strong Special Attack; good typing
+Weaknesses: Weak to Fire, Ground, Ghost, Dark
+Checks & Counters: Dark types, Fire/Ground types, Dark Moves like Knock Off | Pokemon Counters: Kingambit, Landorus-Therian
+Synergies / Teammates: Rillaboom, Urshifu-Rapid-Strike
+Playstyle: Wall-ignoring special attacker that cannot be taunted or burned
+Usage / Meta Tier: A
+
+==================================================
+17. KINGAMBIT
+Base Stats: 100 / 135 / 120 / 60 / 85 / 50
+Roles: Defiant Attacker, Supreme Overlord Sweeper, Bulky Wallbreaker
+Abilities: Defiant (Supreme Overlord)
+Common Items: Assault Vest, Black Glasses, Focus Sash, Lum Berry
+Common Moves: Kowtow Cleave, Sucker Punch, Iron Head, Swords Dance, Protect, Low Kick
+Preferred Tera Types: Dark, Flying, Ghost
+Strengths: Defiant punishes Intimidate; Supreme Overlord gets stronger as allies faint
+Weaknesses: Weak to Fighting, Fire, Ground; slow
+Checks & Counters: Fighting/Ground/Fire attackers, Tera Fighting | Pokemon Counters: Iron Hands, Landorus-Therian
+Synergies / Teammates: Incineroar, Grimmsnarl
+Playstyle: Late-game finisher that grows stronger as allies faint
+Usage / Meta Tier: A
+
+==================================================
+18. DRAGONITE
+Base Stats: 91 / 134 / 95 / 100 / 100 / 80
+Roles: Multiscale Bulky Attacker, Dragon Dance/Tailwind Sweeper
+Abilities: Multiscale (Inner Focus)
+Common Items: Loaded Dice, Lum Berry, Choice Band, Sitrus Berry
+Common Moves: Extreme Speed, Dragon Dance, Dragon Claw, Fire Punch, Protect, Tailwind
+Preferred Tera Types: Normal, Fairy, Fire, Flying
+Strengths: Priority Extreme Speed; Multiscale for bulk; no Intimidate issues
+Weaknesses: Weak to Ice, Rock, Dragon, Fairy
+Checks & Counters: Ice/Fairy attackers, Rock Slide, Fake Out chip | Pokemon Counters: Iron Bundle, Tyranitar
+Synergies / Teammates: Amoonguss, Rillaboom
+Playstyle: Bulky setup attacker that cleans up with Extreme Speed
+Usage / Meta Tier: A
+
+==================================================
+19. ARCHALUDON
+Base Stats: 90 / 105 / 130 / 125 / 65 / 85
+Roles: Rain Special Attacker, Electro Shot Sweeper, Bulky Steel
+Abilities: Stamina (Sturdy)
+Common Items: Assault Vest, Power Herb, Leftovers, Choice Specs
+Common Moves: Electro Shot, Flash Cannon, Draco Meteor, Body Press, Protect, Snarl
+Preferred Tera Types: Fire, Flying, Electric, Steel
+Strengths: Great bulk with Stamina; strong rain/electric spam
+Weaknesses: Weak to Fighting, Ground (not Rock/Steel); no strong Priority
+Checks & Counters: Fighting/Ground types, Chi-Yu, Torkoal | Pokemon Counters: Landorus-Therian, Iron Hands
+Synergies / Teammates: Pelipper, Incineroar
+Playstyle: Rain special sweeper that pivots Stamina bulk into offense
+Usage / Meta Tier: A (Rain staple)
+
+==================================================
+20. PELIPPER
+Base Stats: 60 / 50 / 100 / 95 / 70 / 65
+Roles: Rain Setter, Tailwind Support, Hurricane Attacker
+Abilities: Drizzle (Keen Eye)
+Common Items: Damp Rock, Focus Sash, Sitrus Berry, Safety Goggles
+Common Moves: Hurricane, Weather Ball, Tailwind, Wide Guard, Protect, Scald, Hydro Pump
+Preferred Tera Types: Ghost, Grass, Steel
+Strengths: Reliable Rain setter; Tailwind support
+Weaknesses: Weak to Rock, Electric; low offense
+Checks & Counters: Electric/Rock types, Fake Out | Pokemon Counters: Raging Bolt, Iron Hands
+Synergies / Teammates: Archaludon, Urshifu-Rapid-Strike
+Playstyle: Weather setter and Tailwind support for Rain teams
+Usage / Meta Tier: A
+
+==================================================
+21. GRIMMSNARL
+Base Stats: 95 / 120 / 65 / 95 / 75 / 60
+Roles: Screens Support, Prankster Light Screen/Reflect, Taunt/Spirit Break Support
+Abilities: Prankster (Frisk)
+Common Items: Light Clay, Sitrus Berry, Covert Cloak, Focus Sash
+Common Moves: Light Screen, Reflect, Spirit Break, Foul Play, Parting Shot, Thunder Wave, Taunt
+Preferred Tera Types: Fairy, Dark, Ghost
+Strengths: Priority screens; Thunder Wave and Parting Shot add utility
+Weaknesses: Weak to Steel, Poison, Fairy, Bug; mediocre bulk
+Checks & Counters: Dark-type counters negate Prankster; Poison/Steel attackers | Pokemon Counters: Gholdengo, Glimmora
+Synergies / Teammates: Kingambit, Dragonite
+Playstyle: Screens setter that supports slower sweepers
+Usage / Meta Tier: A
+
+==================================================
+22. SNEASLER
+Base Stats: 80 / 130 / 60 / 40 / 80 / 120
+Roles: Fast Fighter, Fake Out Support, Unburden Sweeper
+Abilities: Unburden (Poison Touch)
+Common Items: Grassy Seed, Focus Sash, Psychic Seed, White Herb
+Common Moves: Dire Claw, Close Combat, Fake Out, Protect, Gunk Shot, Throat Chop, Acrobatics
+Preferred Tera Types: Fighting, Poison, Flying, Ghost
+Strengths: Fast with huge damage; Unburden doubles speed after item use
+Weaknesses: Frail; weak to Psychic, Ground, Flying
+Checks & Counters: Psychic types, Fake Out, Ghost types | Pokemon Counters: Farigiraf, Indeedee-F
+Synergies / Teammates: Amoonguss, Whimsicott
+Playstyle: Speedy cleaner that thrives after Seed activation
+Usage / Meta Tier: B+
+
+==================================================
+23. MAUSHOLD
+Base Stats: 74 / 75 / 70 / 65 / 75 / 111
+Roles: Follow Me Support, Friend Guard, Population Bomb Attacker
+Abilities: Friend Guard (Technician)
+Common Items: Wide Lens, Sitrus Berry, Rocky Helmet
+Common Moves: Follow Me, Population Bomb, Super Fang, Feint, Encore, Protect, Taunt
+Preferred Tera Types: Ghost, Normal, Poison
+Strengths: Redirects and tanks; Population Bomb hits up to 10 times
+Weaknesses: Weak to Fighting; mediocre bulk
+Checks & Counters: Fighting types, Intimidate, Taunt | Pokemon Counters: Iron Hands, Annihilape
+Synergies / Teammates: Flutter Mane, Iron Hands
+Playstyle: Fast Follow Me support that protects fragile attackers
+Usage / Meta Tier: A
+
+==================================================
+24. INDEEDEE-F
+Base Stats: 70 / 55 / 65 / 95 / 105 / 85
+Roles: Psychic Terrain Support, Follow Me, Helping Hand/Trick Room Support
+Abilities: Psychic Surge (Own Tempo)
+Common Items: Psychic Seed, Sitrus Berry, Mental Herb, Safety Goggles
+Common Moves: Follow Me, Helping Hand, Psychic, Dazzling Gleam, Protect, Trick Room, Hyper Voice
+Preferred Tera Types: Fairy, Water, Dark
+Strengths: Blocks priority via terrain; reliable Follow Me
+Weaknesses: Weak to Dark, Ghost, Bug
+Checks & Counters: Dark/Ghost types, Terrain removal | Pokemon Counters: Kingambit, Grimmsnarl
+Synergies / Teammates: Ursaluna-Bloodmoon, Torkoal
+Playstyle: Support that enables Trick Room teams with redirection
+Usage / Meta Tier: A
+
+==================================================
+25. WHIMSICOTT
+Base Stats: 60 / 67 / 85 / 77 / 75 / 116
+Roles: Tailwind Support, Prankster Disruptor, Encore/Taunt Support
+Abilities: Prankster (Infiltrator)
+Common Items: Focus Sash, Covert Cloak, Mental Herb
+Common Moves: Tailwind, Moonblast, Encore, Taunt, Protect, Helping Hand, Beat Up
+Preferred Tera Types: Ghost, Steel, Fairy
+Strengths: Priority Tailwind; Encore locks opponents
+Weaknesses: Frail; weak to Fire, Flying, Poison, Ice, Steel
+Checks & Counters: Dark types, Fake Out, Rock/Flying attackers | Pokemon Counters: Torkoal, Tyranitar
+Synergies / Teammates: Sneasler, Rillaboom
+Playstyle: Fast support that sets Tailwind and disrupts
+Usage / Meta Tier: B+
+
+==================================================
+26. RAGING BOLT
+Base Stats: 125 / 73 / 91 / 137 / 89 / 75
+Roles: Special Attacker, Bulky Special Sweeper, Calm Mind Attacker
+Abilities: Protosynthesis
+Common Items: Booster Energy, Assault Vest, Leftovers, Life Orb
+Common Moves: Thunderclap, Thunderbolt, Draco Meteor, Calm Mind, Protect, Volt Switch, Dragon Pulse
+Preferred Tera Types: Fairy, Electric, Fire
+Strengths: Great bulk and offensive stats; Thunderclap priority
+Weaknesses: Weak to Ground, Ice, Dragon, Fairy
+Checks & Counters: Ground types (Landorus-T, Garchomp), Dark types, Ice | Pokemon Counters: Landorus-Therian, Garchomp
+Synergies / Teammates: Amoonguss, Incineroar
+Playstyle: Bulky special attacker that either sets up or pressures
+Usage / Meta Tier: A
+
+==================================================
+27. IRON BUNDLE
+Base Stats: 56 / 80 / 114 / 124 / 60 / 136
+Roles: Fast Special Attacker, Freeze-Dry Sniper, Icy Wind Support
+Abilities: Quark Drive
+Common Items: Booster Energy, Focus Sash, Choice Specs, Choice Scarf
+Common Moves: Freeze-Dry, Hydro Pump, Icy Wind, Protect, Flip Turn, Snowscape
+Preferred Tera Types: Water, Ice, Ghost
+Strengths: Extremely fast; Freeze-Dry hits Water types; Icy Wind speed control
+Weaknesses: Frail; weak to Fire, Fighting, Rock, Steel
+Checks & Counters: Fire/Rock types, Fake Out, Steel attackers | Pokemon Counters: Torkoal, Tyranitar
+Synergies / Teammates: Rillaboom, Incineroar
+Playstyle: Fast speed control and special sweeper
+Usage / Meta Tier: B+
+
+==================================================
+28. HATTERENE
+Base Stats: 57 / 90 / 95 / 136 / 103 / 29
+Roles: Trick Room Attacker, Magic Bounce Support, Psychic Spammer
+Abilities: Magic Bounce (Anticipation)
+Common Items: Life Orb, Sitrus Berry, Focus Sash
+Common Moves: Dazzling Gleam, Psychic, Trick Room, Mystical Fire, Protect, Mystical Power
+Preferred Tera Types: Fairy, Fire, Water
+Strengths: Reflects status moves; Fairy/Psychic strength
+Weaknesses: Weak to Steel, Ghost, Poison; very slow
+Checks & Counters: Steel types, Ghost/Dark types, Fake Out | Pokemon Counters: Kingambit, Gholdengo
+Synergies / Teammates: Farigiraf, Incineroar
+Playstyle: Trick Room attacker with Magic Bounce utility
+Usage / Meta Tier: B
+
+==================================================
+29. ANNIHILAPE
+Base Stats: 110 / 115 / 80 / 50 / 90 / 90
+Roles: Rage Fist Bulky Attacker, Bulk Up Sweeper, Fighting/Ghost Wallbreaker
+Abilities: Defiant (Inner Focus)
+Common Items: Leftovers, Choice Band, Lum Berry, Sitrus Berry
+Common Moves: Rage Fist, Drain Punch, Bulk Up, Protect, Coaching, Gunk Shot, Taunt
+Preferred Tera Types: Water, Fighting, Fairy, Ghost
+Strengths: Rage Fist scales with damage taken; bulky; Defiant punishes Intimidate
+Weaknesses: Weak to Flying, Psychic, Ghost, Fairy
+Checks & Counters: Flying/Psychic types, Fake Out, Intimidate immunity | Pokemon Counters: Tornadus, Farigiraf
+Synergies / Teammates: Amoonguss, Incineroar
+Playstyle: Bulky attacker that grows stronger when hit
+Usage / Meta Tier: B+
+
+==================================================
+30. VOLCARONA
+Base Stats: 85 / 60 / 65 / 135 / 105 / 100
+Roles: Quiver Dance Sweeper, Bug/Fire Special Attacker
+Abilities: Flame Body (Swarm)
+Common Items: Heavy-Duty Boots, Focus Sash, Sitrus Berry, Charcoal
+Common Moves: Quiver Dance, Heat Wave, Bug Buzz, Protect, Giga Drain, Fiery Dance, Tera Blast
+Preferred Tera Types: Grass, Water, Ground
+Strengths: Powerful setup attacker with great special stats
+Weaknesses: 4x weak to Rock; weak to Water, Flying
+Checks & Counters: Rock types, Water attackers, Fake Out, Tera blast Rock | Pokemon Counters: Tyranitar, Landorus-Therian
+Synergies / Teammates: Torkoal, Hatterene
+Playstyle: Setup special attacker that threatens sweeps
+Usage / Meta Tier: B
+
+==================================================
+31. NINETALES-ALOLA
+Base Stats: 73 / 67 / 75 / 81 / 100 / 109
+Roles: Aurora Veil Support, Snow Special Attacker, Blizzard Spammer
+Abilities: Snow Warning (Snow Cloak)
+Common Items: Light Clay, Focus Sash, Icy Rock, Sitrus Berry
+Common Moves: Aurora Veil, Blizzard, Moonblast, Freeze-Dry, Protect, Encore, Icy Wind
+Preferred Tera Types: Fairy, Water, Steel
+Strengths: Snow setter with fast Aurora Veil; Blizzard never misses in Snow
+Weaknesses: Frail; weak to Fire, Steel, Rock, Poison
+Checks & Counters: Fire/Rock/Steel types, Fake Out | Pokemon Counters: Torkoal, Gholdengo
+Synergies / Teammates: Chien-Pao, Iron Bundle
+Playstyle: Aurora Veil support or Blizzard attacker
+Usage / Meta Tier: B+
+
+==================================================
+32. PALAFIN
+Base Stats: 100 / 160 / 97 / 106 / 87 / 100 (Hero); 100 / 70 / 72 / 53 / 62 / 100 (Zero)
+Roles: Hero Sweeper, Jet Punch Sweeper, Pivot
+Abilities: Zero to Hero
+Common Items: Mystic Water, Choice Band, Sitrus Berry, Focus Sash
+Common Moves: Jet Punch, Wave Crash, Close Combat, Flip Turn, Protect, Haze, Rock Slide
+Preferred Tera Types: Water, Fighting, Fairy
+Strengths: Switching into Hero form creates massive offense; priority Jet Punch
+Weaknesses: Weak to Grass, Electric; weak before Hero
+Checks & Counters: Grass types, Electric types, Fake Out | Pokemon Counters: Amoonguss, Rillaboom
+Synergies / Teammates: Incineroar, Amoonguss
+Playstyle: Pivot that comes in as Hero to sweep
+Usage / Meta Tier: B+
+
+==================================================
+33. GARCHOMP
+Base Stats: 108 / 130 / 95 / 80 / 85 / 102
+Roles: Physical Attacker, Rough Skin Bulky Attacker, Speed Offense
+Abilities: Rough Skin (Sand Veil)
+Common Items: Yache Berry, Focus Sash, Life Orb, Rocky Helmet
+Common Moves: Earthquake, Dragon Claw, Rock Slide, Protect, Stomping Tantrum, Swords Dance
+Preferred Tera Types: Steel, Fire, Poison
+Strengths: Fast and bulky with strong STAB attacks
+Weaknesses: 4x weak to Ice, weak to Dragon, Fairy
+Checks & Counters: Ice moves, Fairy types, Intimidate | Pokemon Counters: Iron Bundle, Ninetales-Alola
+Synergies / Teammates: Tornadus, Amoonguss
+Playstyle: Powerful physical attacker with wide coverage
+Usage / Meta Tier: B+
+
+==================================================
+34. TYRANITAR
+Base Stats: 100 / 134 / 110 / 95 / 100 / 61
+Roles: Sand Setter, Rock/Dark Attacker, Bulky Pivot
+Abilities: Sand Stream (Unnerve)
+Common Items: Assault Vest, Chople Berry, Choice Band, Black Glasses
+Common Moves: Rock Slide, Knock Off, Crunch, Protect, High Horsepower, Dragon Dance, Low Kick
+Preferred Tera Types: Dark, Ghost, Steel, Fire
+Strengths: Auto-sets Sand; strong Special Defense boost; strong offense
+Weaknesses: 4x weak to Fighting; weak to Water, Grass, Ground
+Checks & Counters: Fighting/Water/Grass attackers, Fake Out | Pokemon Counters: Iron Hands, Urshifu-Rapid-Strike
+Synergies / Teammates: Excadrill-style Sand abusers, Landorus-Therian
+Playstyle: Sand setter that threatens with Rock Slide/Knock Off
+Usage / Meta Tier: B
+
+==================================================
+35. SALAMENCE
+Base Stats: 95 / 135 / 80 / 110 / 80 / 100
+Roles: Intimidate Pivot, Tailwind Attacker, Dragon Dance Sweeper
+Abilities: Intimidate (Moxie)
+Common Items: Choice Scarf, Life Orb, Sitrus Berry, Mystic Water
+Common Moves: Dual Wingbeat, Double-Edge, Hurricane, Tailwind, Protect, Draco Meteor, Dragon Dance
+Preferred Tera Types: Flying, Dragon, Normal
+Strengths: Intimidate + speed + strong STAB
+Weaknesses: 4x weak to Ice; weak to Rock, Dragon, Fairy
+Checks & Counters: Ice moves, Fairy types, Fake Out | Pokemon Counters: Iron Bundle, Ninetales-Alola
+Synergies / Teammates: Amoonguss, Landorus-Therian
+Playstyle: Aggressive Intimidator with flexible offense
+Usage / Meta Tier: B
+
+==================================================
+36. HYDREIGON
+Base Stats: 92 / 105 / 90 / 125 / 90 / 98
+Roles: Special Attacker, Dark/Dragon Spread Attacker
+Abilities: Levitate
+Common Items: Life Orb, Choice Specs, Focus Sash, Choice Scarf
+Common Moves: Draco Meteor, Dark Pulse, Hyper Voice, Protect, Flamethrower, Snarl
+Preferred Tera Types: Dark, Dragon, Fairy
+Strengths: Strong special coverage; immune to Ground via Levitate
+Weaknesses: 4x weak to Fairy; weak to Bug, Dragon, Fighting
+Checks & Counters: Fairy types, Fake Out, Fighting types | Pokemon Counters: Flutter Mane, Primarina
+Synergies / Teammates: Incineroar, Amoonguss
+Playstyle: Strong special attacker with good speed
+Usage / Meta Tier: B
+
+==================================================
+37. PRIMARINA
+Base Stats: 80 / 74 / 74 / 126 / 116 / 60
+Roles: Special Attacker, Rain Attacker, Sound-based Spread Attacker
+Abilities: Liquid Voice (Torrent)
+Common Items: Throat Spray, Choice Specs, Sitrus Berry
+Common Moves: Hyper Voice, Moonblast, Hydro Pump, Protect, Icy Wind, Haze
+Preferred Tera Types: Water, Fairy, Grass
+Strengths: Hyper Voice becomes a strong Water spread move; bulky special
+Weaknesses: Weak to Electric, Poison, Grass; slow
+Checks & Counters: Grass/Electric types, Fake Out, Poison moves | Pokemon Counters: Amoonguss, Raging Bolt
+Synergies / Teammates: Pelipper, Incineroar
+Playstyle: Spread-damage special attacker with great bulk
+Usage / Meta Tier: B
+
+==================================================
+38. BASCULEGION
+Base Stats: 120 / 112 / 65 / 80 / 75 / 78
+Roles: Rain Physical Attacker, Last Respects Attacker
+Abilities: Swift Swim (Adaptability)
+Common Items: Choice Band, Mystic Water, Sitrus Berry
+Common Moves: Wave Crash, Last Respects, Aqua Jet, Protect, Shadow Ball, Flip Turn
+Preferred Tera Types: Water, Ghost
+Strengths: Strong Rain sweeper with great HP
+Weaknesses: Weak to Grass, Electric, Ghost, Dark
+Checks & Counters: Grass/Electric/Ghost types, Fake Out | Pokemon Counters: Amoonguss, Rillaboom
+Synergies / Teammates: Pelipper, Politoed
+Playstyle: Rain physical sweeper that grows stronger with fallen allies
+Usage / Meta Tier: B
+
+==================================================
+39. POLITOED
+Base Stats: 90 / 75 / 75 / 90 / 100 / 70
+Roles: Rain Setter, Perish Song Support, Helping Hand/Encore Support
+Abilities: Drizzle (Water Absorb)
+Common Items: Damp Rock, Sitrus Berry, Focus Sash, Mental Herb
+Common Moves: Weather Ball, Hypnosis, Helping Hand, Protect, Ice Beam, Muddy Water
+Preferred Tera Types: Grass, Fairy, Steel
+Strengths: Rain setter with bulk; versatile support moves
+Weaknesses: Weak to Grass, Electric
+Checks & Counters: Grass/Electric types, Fake Out | Pokemon Counters: Amoonguss, Raging Bolt
+Synergies / Teammates: Basculegion, Primarina
+Playstyle: Rain setter with utility
+Usage / Meta Tier: B
+
+==================================================
+40. GLIMMORA
+Base Stats: 83 / 55 / 90 / 130 / 81 / 86
+Roles: Hazard Setter, Special Attacker, Toxic Debris Support
+Abilities: Toxic Debris (Corrosion)
+Common Items: Focus Sash, Power Herb, Life Orb
+Common Moves: Mortal Spin, Sludge Bomb, Earth Power, Protect, Spiky Shield, Energy Ball
+Preferred Tera Types: Grass, Ghost, Water
+Strengths: Toxic Spikes support; strong special offense
+Weaknesses: 4x weak to Ground; weak to Water, Ice, Psychic
+Checks & Counters: Ground/Water types, Fake Out | Pokemon Counters: Landorus-Therian, Urshifu-Rapid-Strike
+Synergies / Teammates: Incineroar, Amoonguss
+Playstyle: Hazard-based special attacker
+Usage / Meta Tier: C+
+
+==================================================
+41. SCREAM TAIL
+Base Stats: 115 / 65 / 99 / 65 / 115 / 111
+Roles: Bulky Support, Disable/Encore Support, Fake-Out Resistor
+Abilities: Protosynthesis
+Common Items: Booster Energy, Sitrus Berry, Covert Cloak
+Common Moves: Perish Song, Encore, Disable, Protect, Dazzling Gleam, Helping Hand, Taunt
+Preferred Tera Types: Water, Steel, Fairy
+Strengths: Great bulk and speed; support options
+Weaknesses: Weak to Steel, Poison; low damage
+Checks & Counters: Steel/Poison attackers, Taunt | Pokemon Counters: Gholdengo, Glimmora
+Synergies / Teammates: Incineroar, Amoonguss
+Playstyle: Fast bulky support that disrupts opponents
+Usage / Meta Tier: C+
+
+==================================================
+42. WALKING WAKE
+Base Stats: 99 / 83 / 91 / 125 / 83 / 109
+Roles: Special Attacker, Rain Sweeper, Hydro Steam Attacker
+Abilities: Protosynthesis
+Common Items: Booster Energy, Choice Specs, Life Orb
+Common Moves: Hydro Steam, Draco Meteor, Flamethrower, Protect, Flip Turn, Dragon Pulse
+Preferred Tera Types: Fire, Water, Dragon
+Strengths: Very strong Water/Dragon offense; fast
+Weaknesses: Weak to Dragon, Fairy, Electric, Grass
+Checks & Counters: Fairy types, Grass/Electric, Fake Out | Pokemon Counters: Flutter Mane, Raging Bolt
+Synergies / Teammates: Pelipper, Incineroar
+Playstyle: Strong Rain/Sun special sweeper
+Usage / Meta Tier: B
+
+==================================================
+43. IRON VALIANT
+Base Stats: 74 / 130 / 90 / 120 / 60 / 116
+Roles: Mixed Attacker, Fast Fairy/Fighting Sweeper, Swords Dance Attacker
+Abilities: Quark Drive
+Common Items: Booster Energy, Focus Sash, Life Orb
+Common Moves: Spirit Break, Close Combat, Moonblast, Protect, Swords Dance, Knock Off
+Preferred Tera Types: Fairy, Fighting, Ghost
+Strengths: Fast and powerful; flexible mixed offense
+Weaknesses: Frail; weak to Steel, Flying, Poison, Psychic, Fairy
+Checks & Counters: Steel/Flying/Psychic types, Fake Out | Pokemon Counters: Gholdengo, Tornadus
+Synergies / Teammates: Incineroar, Amoonguss
+Playstyle: Fast mixed attacker with strong coverage
+Usage / Meta Tier: C+
+
+==================================================
+44. ROTOM-WASH
+Base Stats: 50 / 65 / 107 / 105 / 107 / 86
+Roles: Bulky Pivot, Will-O-Wisp Support, Special Tank
+Abilities: Levitate
+Common Items: Sitrus Berry, Leftovers, Safety Goggles
+Common Moves: Hydro Pump, Thunderbolt, Will-O-Wisp, Protect, Volt Switch, Hex
+Preferred Tera Types: Fairy, Steel, Water
+Strengths: Great typing and bulk; Will-O-Wisp cripples physical attackers
+Weaknesses: Weak to Ghost, Grass, Dark
+Checks & Counters: Grass/Ghost/Dark attackers | Pokemon Counters: Rillaboom, Kingambit
+Synergies / Teammates: Incineroar, Tornadus
+Playstyle: Bulky pivot that controls physical attackers
+Usage / Meta Tier: B
+
+==================================================
+45. WEEZING-GALAR
+Base Stats: 65 / 90 / 120 / 85 / 70 / 60
+Roles: Neutralizing Gas Support, Fairy Wind Support, Bulky Pivot
+Abilities: Neutralizing Gas (Levitate)
+Common Items: Sitrus Berry, Rocky Helmet, Safety Goggles
+Common Moves: Fairy Wind, Strange Steam, Will-O-Wisp, Protect, Poison Gas, Taunt
+Preferred Tera Types: Steel, Fairy, Water
+Strengths: Neutralizing Gas shuts off opposing abilities (Intimidate, Protosynthesis)
+Weaknesses: Weak to Ground, Psychic
+Checks & Counters: Ground/Psychic types, Fake Out | Pokemon Counters: Landorus-Therian, Farigiraf
+Synergies / Teammates: Ursaluna-Bloodmoon, Iron Hands
+Playstyle: Ability-disabling support
+Usage / Meta Tier: C
+
+==================================================
+46. PORYGON2
+Base Stats: 85 / 80 / 90 / 105 / 95 / 60
+Roles: Trick Room Support, Eviolite Tank, Download Attacker
+Abilities: Download (Trace)
+Common Items: Eviolite
+Common Moves: Trick Room, Tri Attack, Recover, Ice Beam, Protect, Foul Play, Thunderbolt
+Preferred Tera Types: Fairy, Ghost, Water
+Strengths: Eviolite bulk; Trick Room setter
+Weaknesses: Weak to Fighting; slow
+Checks & Counters: Fighting types, Fake Out | Pokemon Counters: Iron Hands, Annihilape
+Synergies / Teammates: Ursaluna-Bloodmoon, Torkoal
+Playstyle: Bulky Trick Room support
+Usage / Meta Tier: C
+
+==================================================
+47. GOUGING FIRE
+Base Stats: 105 / 115 / 121 / 65 / 93 / 91
+Roles: Physical Attacker, Fire/Dragon Wallbreaker, Sun Attacker
+Abilities: Protosynthesis
+Common Items: Booster Energy, Assault Vest, Life Orb
+Common Moves: Heat Crash, Breaking Swipe, Dragon Dance, Protect, Flare Blitz, Burning Bulwark
+Preferred Tera Types: Fire, Dragon, Fairy
+Strengths: Great bulk; strong Fire/Dragon STABs
+Weaknesses: Weak to Rock, Ground, Dragon, Water
+Checks & Counters: Water/Ground/Rock types | Pokemon Counters: Urshifu-Rapid-Strike, Landorus-Therian
+Synergies / Teammates: Torkoal, Amoonguss
+Playstyle: Bulky physical attacker with Sun synergy
+Usage / Meta Tier: B
+
+==================================================
+48. OGERPON-CORNERSTONE
+Base Stats: 80 / 120 / 84 / 60 / 96 / 110
+Roles: Physical Attacker, Follow Me Support, Defensive Pivot
+Abilities: Sturdy
+Common Items: Cornerstone Mask (fixed)
+Common Moves: Ivy Cudgel, Follow Me, Horn Leech, Spiky Shield, Power Whip, Swords Dance
+Preferred Tera Types: Rock (Terastallized always)
+Strengths: Rock/Grass typing with Sturdy; strong offense
+Weaknesses: Weak to Fighting, Ice, Steel, Bug; one-time Tera
+Checks & Counters: Fighting/Ice/Steel types, Fake Out | Pokemon Counters: Iron Hands, Kingambit
+Synergies / Teammates: Incineroar, Amoonguss
+Playstyle: Sturdy redirecting attacker
+Usage / Meta Tier: C
+
+==================================================
+49. DONDOZO
+Base Stats: 150 / 100 / 115 / 65 / 65 / 35
+Roles: Commander Tank, Order Up Attacker, Trick Room Tank
+Abilities: Unaware (Oblivious)
+Common Items: Leftovers, Sitrus Berry
+Common Moves: Order Up, Wave Crash, Earthquake, Protect, Yawn, Rest
+Preferred Tera Types: Water, Dragon, Fairy
+Strengths: Huge HP; Commander boosts stats with Tatsugiri
+Weaknesses: Weak to Grass, Electric
+Checks & Counters: Grass/Electric types, Fake Out | Pokemon Counters: Amoonguss, Rillaboom
+Synergies / Teammates: Tatsugiri
+Playstyle: Commander-based tank that boosts and attacks
+Usage / Meta Tier: B
+
+==================================================
+50. TATSUGIRI
+Base Stats: 68 / 50 / 60 / 120 / 95 / 82
+Roles: Commander Pair, Special Attacker, Support
+Abilities: Commander (Storm Drain)
+Common Items: Choice Scarf, Focus Sash, Sitrus Berry
+Common Moves: Draco Meteor, Muddy Water, Icy Wind, Protect, Hydro Pump, Taunt
+Preferred Tera Types: Dragon, Water, Fairy
+Strengths: Commander with Dondozo gives immense boosts
+Weaknesses: Frail; weak to Grass, Electric, Fairy, Dragon
+Checks & Counters: Grass/Electric types, Fake Out | Pokemon Counters: Flutter Mane, Raging Bolt
+Synergies / Teammates: Dondozo
+Playstyle: Commander pair with Dondozo
+Usage / Meta Tier: B
