@@ -1,948 +1,978 @@
-  /* =============================================================================
-    style.css — POKED Shared Stylesheet
-    Gen 9 VGC / Doubles OU Pokémon Reference Site
-    Dark base theme. All colors, fonts, and spacing are CSS custom properties
-    defined in :root below — edit those to restyle the entire site at once.
-    ============================================================================= */
+    /* =============================================================================
+      style.css — POKED Shared Stylesheet
+      Gen 9 VGC / Doubles OU Pokémon Reference Site
+      Dark base theme. All colors, fonts, and spacing are CSS custom properties
+      defined in :root below — edit those to restyle the entire site at once.
+      ============================================================================= */
 
 
-  /* =============================================================================
-    CSS CUSTOM PROPERTIES (Design Tokens)
-    Change these variables to restyle the whole site.
-    ============================================================================= */
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap');
-    :root {
-    /* --- Background Colors --- */
-    --color-bg-page:        #05070D;   /* Main page background */
-    --color-bg-surface:     #101D38;   /* Cards, panels, nav background */
-    --color-bg-elevated:    #172B4D;   /* Hover states, input backgrounds */
-    --color-bg-input:       #12121c;   /* Form input backgrounds */
+    /* =============================================================================
+      CSS CUSTOM PROPERTIES (Design Tokens)
+      Change these variables to restyle the whole site.
+      ============================================================================= */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap');
+      :root {
+      /* --- Background Colors --- */
+      --color-bg-page:        #05070D;   /* Main page background */
+      --color-bg-surface:     #101D38;   /* Cards, panels, nav background */
+      --color-bg-elevated:    #172B4D;   /* Hover states, input backgrounds */
+      --color-bg-input:       #12121c;   /* Form input backgrounds */
 
-    /* --- Text Colors --- */
-    --color-text-primary:   #e8e8f0;   /* Main body text */
-    --color-text-secondary: #9090a8;   /* Captions, labels, muted text */
-    --color-text-heading:   #ffffff;   /* Page and section headings */
-    --color-text-link:      #7b8cff;   /* Hyperlinks */
+      /* --- Text Colors --- */
+      --color-text-primary:   #e8e8f0;   /* Main body text */
+      --color-text-secondary: #9090a8;   /* Captions, labels, muted text */
+      --color-text-heading:   #ffffff;   /* Page and section headings */
+      --color-text-link:      #7b8cff;   /* Hyperlinks */
 
-    /* --- Accent / Brand Colors --- */
-    --color-accent:         #3979C9;   /* Primary accent (buttons, highlights) */
-    --color-accent-hover:   #65BFFF;   /* Accent on hover */
-    --color-accent-dim:     rgba(95,111,255,0.15); /* Subtle accent tint for backgrounds */
+      /* --- Accent / Brand Colors --- */
+      --color-accent:         #3979C9;   /* Primary accent (buttons, highlights) */
+      --color-accent-hover:   #65BFFF;   /* Accent on hover */
+      --color-accent-dim:     rgba(95,111,255,0.15); /* Subtle accent tint for backgrounds */
 
-    /* --- Border Colors --- */
-    --color-border:         #2e2e48;   /* General borders and dividers */
-    --color-border-subtle:  #1e1e30;   /* Subtle inner borders */
+      /* --- Border Colors --- */
+      --color-border:         #2e2e48;   /* General borders and dividers */
+      --color-border-subtle:  #1e1e30;   /* Subtle inner borders */
 
-    /* --- Tier Badge Colors --- */
-    --color-tier-s:         #f5c518;   /* S tier — gold */
-    --color-tier-s-bg:      rgba(245,197,24,0.15);
-    --color-tier-a-plus:    #00c896;   /* A+ tier — emerald */
-    --color-tier-a-plus-bg: rgba(0,200,150,0.15);
-    --color-tier-a:         #4caf50;   /* A  tier — green */
-    --color-tier-a-bg:      rgba(76,175,80,0.15);
-    --color-tier-b-plus:    #2196f3;   /* B+ tier — blue */
-    --color-tier-b-plus-bg: rgba(33,150,243,0.15);
-    --color-tier-b:         #64b5f6;   /* B  tier — light blue */
-    --color-tier-b-bg:      rgba(100,181,246,0.15);
-    --color-tier-c-plus:    #9e9e9e;   /* C+ tier — gray */
-    --color-tier-c-plus-bg: rgba(158,158,158,0.15);
-    --color-tier-c:         #757575;   /* C  tier — dark gray */
-    --color-tier-c-bg:      rgba(117,117,117,0.15);
+      /* --- Tier Badge Colors --- */
+      --color-tier-s:         #f5c518;   /* S tier — gold */
+      --color-tier-s-bg:      rgba(245,197,24,0.15);
+      --color-tier-a-plus:    #00c896;   /* A+ tier — emerald */
+      --color-tier-a-plus-bg: rgba(0,200,150,0.15);
+      --color-tier-a:         #4caf50;   /* A  tier — green */
+      --color-tier-a-bg:      rgba(76,175,80,0.15);
+      --color-tier-b-plus:    #2196f3;   /* B+ tier — blue */
+      --color-tier-b-plus-bg: rgba(33,150,243,0.15);
+      --color-tier-b:         #64b5f6;   /* B  tier — light blue */
+      --color-tier-b-bg:      rgba(100,181,246,0.15);
+      --color-tier-c-plus:    #9e9e9e;   /* C+ tier — gray */
+      --color-tier-c-plus-bg: rgba(158,158,158,0.15);
+      --color-tier-c:         #757575;   /* C  tier — dark gray */
+      --color-tier-c-bg:      rgba(117,117,117,0.15);
 
-    /* --- Pokémon Type Colors (standard series palette) --- */
-    --type-normal:   #A8A878;
-    --type-fire:     #F08030;
-    --type-water:    #6890F0;
-    --type-electric: #F8D030;
-    --type-grass:    #78C850;
-    --type-ice:      #98D8D8;
-    --type-fighting: #C03028;
-    --type-poison:   #A040A0;
-    --type-ground:   #E0C068;
-    --type-flying:   #A890F0;
-    --type-psychic:  #F85888;
-    --type-bug:      #A8B820;
-    --type-rock:     #B8A038;
-    --type-ghost:    #705898;
-    --type-dragon:   #7038F8;
-    --type-dark:     #705848;
-    --type-steel:    #B8B8D0;
-    --type-fairy:    #EE99AC;
+      /* --- Pokémon Type Colors (standard series palette) --- */
+      --type-normal:   #A8A878;
+      --type-fire:     #F08030;
+      --type-water:    #6890F0;
+      --type-electric: #F8D030;
+      --type-grass:    #78C850;
+      --type-ice:      #98D8D8;
+      --type-fighting: #C03028;
+      --type-poison:   #A040A0;
+      --type-ground:   #E0C068;
+      --type-flying:   #A890F0;
+      --type-psychic:  #F85888;
+      --type-bug:      #A8B820;
+      --type-rock:     #B8A038;
+      --type-ghost:    #705898;
+      --type-dragon:   #7038F8;
+      --type-dark:     #705848;
+      --type-steel:    #B8B8D0;
+      --type-fairy:    #EE99AC;
 
-    /* --- Stat Bar Colors --- */
-    --color-stat-hp:   #6ac76a;   /* HP bar */
-    --color-stat-atk:  #f66;      /* Attack bar */
-    --color-stat-def:  #f8a440;   /* Defense bar */
-    --color-stat-spa:  #5ab4f5;   /* Sp. Atk bar */
-    --color-stat-spd:  #9d7de8;   /* Sp. Def bar */
-    --color-stat-spe:  #f8d830;   /* Speed bar */
-    --color-stat-bg:   #2a2a3a;   /* Stat bar track background */
+      /* --- Stat Bar Colors --- */
+      --color-stat-hp:   #6ac76a;   /* HP bar */
+      --color-stat-atk:  #f66;      /* Attack bar */
+      --color-stat-def:  #f8a440;   /* Defense bar */
+      --color-stat-spa:  #5ab4f5;   /* Sp. Atk bar */
+      --color-stat-spd:  #9d7de8;   /* Sp. Def bar */
+      --color-stat-spe:  #f8d830;   /* Speed bar */
+      --color-stat-bg:   #2a2a3a;   /* Stat bar track background */
 
-    /* --- Typography --- */
-    --font-body: 'Space Grotesk', system-ui, sans-serif;
-    --font-heading: 'Cinzel', serif;
-    --font-size-xs: 0.72rem;
-    --font-size-sm: 0.85rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.2rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2rem;
-    --font-size-3xl: 2.8rem;
-h1, h2, h3, .hero__title, .navbar__brand {
-  font-family: var(--font-heading);
-  letter-spacing: 0.08em;
-}
-    /* --- Spacing Scale --- */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-
-    /* --- Border Radius --- */
-    --radius-sm:  4px;
-    --radius-md:  8px;
-    --radius-lg:  12px;
-    --radius-xl:  18px;
-    --radius-full: 9999px; /* Pill-shaped buttons / badges */
-
-    /* --- Shadows --- */
-    --shadow-card: 0 2px 12px rgba(0,0,0,0.45);
-    --shadow-card-hover: 0 6px 24px rgba(95,111,255,0.18);
-    --shadow-nav:  0 2px 8px rgba(0,0,0,0.5);
-
-    /* --- Transitions --- */
-    --transition-fast: 120ms ease;
-    --transition-base: 200ms ease;
-
-    /* --- Layout --- */
-    --max-width-site:    1280px;  /* Maximum width of content container */
-    --nav-height:        58px;    /* Top navigation bar height */
-    --catalog-grid-min:  240px;   /* Minimum Pokémon card width before wrapping */
-  }
-
-
-  /* =============================================================================
-    RESET & BASE STYLES
-    ============================================================================= */
-  *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-  }
-
-  body  {
-
-    background-color: var(--color-bg-page);
-    color: var(--color-text-primary);
-    font-family: var(--font-body);
-    font-size: var(--font-size-md);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-
-  a { 
-    color: var(--color-text-link);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-  }
-
-  a:hover {
-    color: var(--color-accent-hover);
-    text-decoration: underline;
-  }
-
-  ul, ol {
-    list-style: none;
-  }
-
-  img {
-    max-width: 100%;
-    display: block;
-  }
-
-  button {
-    cursor: pointer;
-    font-family: var(--font-body);
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--color-text-heading);
-    line-height: 1.2;
-  }
-
-
-  /* =============================================================================
-    NAVIGATION BAR
-    ============================================================================= */
-  .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    height: var(--nav-height);
-    background-color: var(--color-bg-surface);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: var(--shadow-nav);
-    display: flex;
-    align-items: center;
-  }
-
-  .navbar__inner {
-    width: 100%;
-    max-width: var(--max-width-site);
-    margin: 0 auto;
-    padding: 0 var(--space-6);
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-  }
-
-  /* Site wordmark / logo text */
-  .navbar__brand {
-    font-size: var(--font-size-xl);
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: var(--color-accent);
-    text-decoration: none;
-  }
-
-  .navbar__brand:hover {
-    color: var(--color-accent-hover);
-    text-decoration: none;
-  }
-
-  .navbar__links {
-    display: flex;
-    gap: var(--space-4);
-    align-items: center;
-    flex: 1;
-  }
-
-  .navbar__link {
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-sm);
-    transition: color var(--transition-fast), background-color var(--transition-fast);
-  }
-
-  .navbar__link:hover {
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-elevated);
-    text-decoration: none;
-  }
-
-  .navbar__link--back {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-weight: 600;
-  }
-
-
-  /* =============================================================================
-    SHARED LAYOUT HELPERS
-    ============================================================================= */
-  .container {
-    max-width: var(--max-width-site);
-    margin: 0 auto;
-    padding: 0 var(--space-6);
-  }
-
-  .page-main {
-    padding: var(--space-10) 0 var(--space-16) 0;
-  }
-
-
-  /* =============================================================================
-    BUTTONS
-    ============================================================================= */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-6);
-    border: none;
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-md);
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-fast);
-    cursor: pointer;
-  }
-
-  .btn:hover {
-    text-decoration: none;
-    transform: translateY(-1px);
-  }
-
-  .btn:active {
-    transform: translateY(0);
-  }
-
-  /* Primary (accent) button */
-  .btn--primary {
-    background-color: var(--color-accent);
-    color: #ffffff;
-  }
-
-  .btn--primary:hover {
-    background-color: var(--color-accent-hover);
-    color: #ffffff;
-  }
-
-  /* Secondary / ghost button */
-  .btn--secondary {
-    background-color: var(--color-bg-elevated);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
-  }
-
-  .btn--secondary:hover {
-    background-color: var(--color-accent-dim);
-    border-color: var(--color-accent);
-    color: var(--color-text-heading);
-  }
-
-  /* Large size modifier */
-  .btn--lg {
-    padding: var(--space-4) var(--space-10);
-    font-size: var(--font-size-lg);
-    border-radius: var(--radius-lg);
-  }
-
-  /* Active / selected state for filter buttons */
-  .btn--active {
-    background-color: var(--color-accent);
-    color: #ffffff;
-    border-color: var(--color-accent);
-  }
-
-
-  /* =============================================================================
-    INDEX PAGE — Landing / Main Menu
-    ============================================================================= */
-
-  /* Full-height hero section */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: var(--space-16) var(--space-6);
-    min-height: calc(60vh - var(--nav-height));
-  }
-
-  .hero__eyebrow {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: var(--space-4);
-  }
-
-  .hero__title {
-    font-size: var(--font-size-3xl);
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, var(--color-text-heading) 40%, var(--color-accent-hover));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--space-4);
-  }
-
-  .hero__subtitle {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
-    max-width: 540px;
-    margin-bottom: var(--space-6);
-  }
-
-  .hero__desc {
-    font-size: var(--font-size-md);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin-bottom: var(--space-8);
-    line-height: 1.7;
-  }
-
-  .hero__cta {
-    margin-bottom: var(--space-12);
-  }
-
-  /* Quick-stats row on index page */
-  .stats-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    justify-content: center;
-    padding: var(--space-8) var(--space-6);
-    border-top: 1px solid var(--color-border);
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .stat-card {
-    background-color: var(--color-bg-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-5) var(--space-6);
-    text-align: center;
-    min-width: 100px;
-    flex: 1 1 100px;
-  }
-
-  .stat-card__value {
-    font-size: var(--font-size-2xl);
-    font-weight: 800;
-    color: var(--color-text-heading);
-    line-height: 1;
-    margin-bottom: var(--space-2);
-  }
-
-  .stat-card__label {
-    font-size: var(--font-size-xs);
-    font-weight: 600;
+      /* --- Typography --- */
+      --font-body: 'Space Grotesk', system-ui, sans-serif;
+      --font-heading: 'Cinzel', serif;
+      --font-size-xs: 0.72rem;
+      --font-size-sm: 0.85rem;
+      --font-size-md: 1rem;
+      --font-size-lg: 1.2rem;
+      --font-size-xl: 1.5rem;
+      --font-size-2xl: 2rem;
+      --font-size-3xl: 2.8rem;
+  h1, h2, h3, .hero__title, .navbar__brand {
+    font-family: var(--font-heading);
     letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-secondary);
   }
+      /* --- Spacing Scale --- */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
 
+      /* --- Border Radius --- */
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  12px;
+      --radius-xl:  18px;
+      --radius-full: 9999px; /* Pill-shaped buttons / badges */
 
-  /* =============================================================================
-    CATALOG PAGE — Pokémon Grid
-    ============================================================================= */
+      /* --- Shadows --- */
+      --shadow-card: 0 2px 12px rgba(0,0,0,0.45);
+      --shadow-card-hover: 0 6px 24px rgba(95,111,255,0.18);
+      --shadow-nav:  0 2px 8px rgba(0,0,0,0.5);
 
-  /* Toolbar: search + filter + sort row */
-  .catalog-toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    align-items: flex-start;
-    margin-bottom: var(--space-6);
-  }
+      /* --- Transitions --- */
+      --transition-fast: 120ms ease;
+      --transition-base: 200ms ease;
 
-  /* Search input wrapper */
-  .search-wrap {
-    flex: 1 1 200px;
-  }
-
-  .search-input {
-    width: 100%;
-    padding: var(--space-3) var(--space-4);
-    background-color: var(--color-bg-input);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-md);
-    font-family: var(--font-body);
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-    outline: none;
-  }
-
-  .search-input::placeholder {
-    color: var(--color-text-secondary);
-  }
-
-  .search-input:focus {
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px var(--color-accent-dim);
-  }
-
-  /* Row of filter / sort buttons */
-  .filter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    align-items: center;
-  }
-
-  .filter-label {
-    font-size: var(--font-size-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-secondary);
-    font-weight: 600;
-    margin-right: var(--space-1);
-  }
-
-  /* Filter / sort button base style */
-  .filter-btn {
-    padding: var(--space-2) var(--space-3);
-    background-color: var(--color-bg-elevated);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    color: var(--color-text-secondary);
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
-  }
-
-  .filter-btn:hover {
-    background-color: var(--color-accent-dim);
-    border-color: var(--color-accent);
-    color: var(--color-text-primary);
-  }
-
-  .filter-btn.btn--active {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #fff;
-  }
-
-  /* Result count indicator */
-  .catalog-count {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-4);
-  }
-
-  /* Pokémon grid layout */
-  .pokemon-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--catalog-grid-min), 1fr));
-    gap: var(--space-5);
-  }
-
-  /* No-results message */
-  .catalog-empty {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: var(--space-16);
-    color: var(--color-text-secondary);
-    font-size: var(--font-size-lg);
-  }
-
-
-  /* =============================================================================
-    POKÉMON CARD (used in catalog grid)
-    ============================================================================= */
-  .pokemon-card {
-    background-color: rgba(16, 29, 56, 0.55);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(101, 191, 255, 0.35);
-    border-top: 3px solid var(--color-tier-s);
-    box-shadow: 0 0 14px rgba(101, 191, 255, 0.15);
-    border-radius: 4px 24px 4px 24px;                
-    padding: var(--space-5);
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    transition:
-      transform var(--transition-base),
-      box-shadow var(--transition-base),
-      border-color var(--transition-base);
-    box-shadow: 0 0 10px rgba(216, 236, 250, 0.45);
-  }
-
-  .pokemon-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-card-hover);
-    border-color: var(--color-accent);
-    text-decoration: none;
-  }
-
-  /* Card header row: number + tier badge */
-  .card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .card__number {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    font-family: var(--font-mono);
-    color: var(--color-text-secondary);
-    letter-spacing: 0.05em;
-  }
-
-  /* Pokémon name */
-  .card__name {
-    font-size: var(--font-size-lg);
-    font-weight: 700;
-    color: var(--color-text-heading);
-    line-height: 1.2;
-  }
-
-  /* Type badges row */
-  .card__types {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  /* Roles (first 2, truncated) */
-  .card__roles {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-secondary);
-    line-height: 1.4;
-    margin-top: auto; /* Push to bottom of card */
-  }
-
-
-  /* =============================================================================
-    TYPE BADGES
-    Shared across cards and detail page.
-    Each type gets a class derived from its lowercase name (e.g. .type-fire).
-    ============================================================================= */
-  .type-badge {
-    display: inline-block;
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #fff;
-    /* text shadow for contrast on light type colors */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-  }
-
-  /* One class per type, using the variables defined in :root */
-  .type-normal   { background-color: var(--type-normal); }
-  .type-fire     { background-color: var(--type-fire); }
-  .type-water    { background-color: var(--type-water); }
-  .type-electric { background-color: var(--type-electric); color: #222; text-shadow: none; }
-  .type-grass    { background-color: var(--type-grass); color: #fff; }
-  .type-ice      { background-color: var(--type-ice); color: #333; text-shadow: none; }
-  .type-fighting { background-color: var(--type-fighting); }
-  .type-poison   { background-color: var(--type-poison); }
-  .type-ground   { background-color: var(--type-ground); color: #333; text-shadow: none; }
-  .type-flying   { background-color: var(--type-flying); }
-  .type-psychic  { background-color: var(--type-psychic); }
-  .type-bug      { background-color: var(--type-bug); }
-  .type-rock     { background-color: var(--type-rock); }
-  .type-ghost    { background-color: var(--type-ghost); }
-  .type-dragon   { background-color: var(--type-dragon); }
-  .type-dark     { background-color: var(--type-dark); }
-  .type-steel    { background-color: var(--type-steel); color: #333; text-shadow: none; }
-  .type-fairy    { background-color: var(--type-fairy); color: #333; text-shadow: none; }
-
-
-  /* =============================================================================
-    TIER BADGES
-    ============================================================================= */
-  .tier-badge {
-    display: inline-block;
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-xs);
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .tier-s    { color: var(--color-tier-s);      background-color: var(--color-tier-s-bg);      border: 1px solid var(--color-tier-s); }
-  .tier-a-plus { color: var(--color-tier-a-plus); background-color: var(--color-tier-a-plus-bg); border: 1px solid var(--color-tier-a-plus); }
-  .tier-a    { color: var(--color-tier-a);      background-color: var(--color-tier-a-bg);      border: 1px solid var(--color-tier-a); }
-  .tier-b-plus { color: var(--color-tier-b-plus); background-color: var(--color-tier-b-plus-bg); border: 1px solid var(--color-tier-b-plus); }
-  .tier-b    { color: var(--color-tier-b);      background-color: var(--color-tier-b-bg);      border: 1px solid var(--color-tier-b); }
-  .tier-c-plus { color: var(--color-tier-c-plus); background-color: var(--color-tier-c-plus-bg); border: 1px solid var(--color-tier-c-plus); }
-  .tier-c    { color: var(--color-tier-c);      background-color: var(--color-tier-c-bg);      border: 1px solid var(--color-tier-c); }
-
-
-  /* =============================================================================
-    STAT BARS (used on detail page)
-    ============================================================================= */
-  .stat-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .stat-row {
-    display: grid;
-    grid-template-columns: 60px 38px 1fr;
-    align-items: center;
-    gap: var(--space-3);
-  }
-
-  .stat-row__label {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-secondary);
-    text-align: right;
-  }
-
-  .stat-row__value {
-    font-size: var(--font-size-sm);
-    font-weight: 700;
-    font-family: var(--font-mono);
-    color: var(--color-text-primary);
-    text-align: right;
-  }
-
-  /* Stat bar track */
-  .stat-row__bar-track {
-    height: 10px;
-    background-color: var(--color-stat-bg);
-    border-radius: var(--radius-full);
-    overflow: hidden;
-  }
-
-  /* Animated fill — width set via inline style in JS */
-  .stat-row__bar-fill {
-    height: 100%;
-    border-radius: var(--radius-full);
-    transition: width 600ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  /* Stat-specific fill colors */
-  .stat-row--hp   .stat-row__bar-fill { background-color: var(--color-stat-hp); }
-  .stat-row--atk  .stat-row__bar-fill { background-color: var(--color-stat-atk); }
-  .stat-row--def  .stat-row__bar-fill { background-color: var(--color-stat-def); }
-  .stat-row--spa  .stat-row__bar-fill { background-color: var(--color-stat-spa); }
-  .stat-row--spd  .stat-row__bar-fill { background-color: var(--color-stat-spd); }
-  .stat-row--spe  .stat-row__bar-fill { background-color: var(--color-stat-spe); }
-
-
-  /* =============================================================================
-    DETAIL PAGE
-    ============================================================================= */
-
-  /* Breadcrumb / back navigation line */
-  .detail-back {
-    margin-bottom: var(--space-6);
-  }
-
-  /* Header section: name, number, types, tier */
-  .detail-header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    margin-bottom: var(--space-8);
-    padding-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .detail-header__meta {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    flex-wrap: wrap;
-  }
-
-  .detail-header__number {
-    font-size: var(--font-size-sm);
-    font-family: var(--font-mono);
-    color: var(--color-text-secondary);
-    font-weight: 700;
-    letter-spacing: 0.06em;
-  }
-
-  .detail-header__name {
-    font-size: var(--font-size-2xl);
-    font-weight: 900;
-    color: var(--color-text-heading);
-    letter-spacing: -0.01em;
-  }
-
-  .detail-header__badges {
-    display: flex;
-    gap: var(--space-2);
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  /* Grid layout for the content sections */
-  .detail-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-  }
-
-  /* A detail section block */
-  .detail-section {
-    background-color: var(--color-bg-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-5) var(--space-6);
-  }
-
-  /* Section title */
-  .detail-section__title {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-accent);
-    margin-bottom: var(--space-4);
-  }
-
-  /* Sections that span the full width */
-  .detail-section--full {
-    grid-column: 1 / -1;
-  }
-
-  /* Plain text paragraphs within detail sections */
-  .detail-section__text {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-primary);
-    line-height: 1.7;
-  }
-
-  /* Chip / tag elements (items, moves, counters, synergies) */
-  .chip-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .chip {
-    display: inline-block;
-    padding: var(--space-1) var(--space-3);
-    background-color: var(--color-bg-elevated);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-    color: var(--color-text-primary);
-    white-space: nowrap;
-  }
-
-  /* Pokémon counter / synergy name chips (slightly highlighted) */
-  .chip--pokemon {
-    background-color: var(--color-accent-dim);
-    border-color: var(--color-accent);
-    color: var(--color-accent-hover);
-    font-weight: 600;
-  }
-
-  /* Role list items */
-  .role-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .role-item {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-primary);
-    padding-left: var(--space-4);
-    position: relative;
-  }
-
-  .role-item::before {
-    content: "›";
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-    font-weight: 700;
-  }
-
-  /* 404/Not-found message on detail page */
-  .detail-not-found {
-    text-align: center;
-    padding: var(--space-16);
-  }
-
-  .detail-not-found h2 {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-4);
-  }
-
-
-  /* =============================================================================
-    RESPONSIVE BREAKPOINTS
-    ============================================================================= */
-
-  /* --- Tablet (max 900px) --- */
-  @media (max-width: 900px) {
-    :root {
-      --catalog-grid-min: 200px;
+      /* --- Layout --- */
+      --max-width-site:    1280px;  /* Maximum width of content container */
+      --nav-height:        58px;    /* Top navigation bar height */
+      --catalog-grid-min:  240px;   /* Minimum Pokémon card width before wrapping */
     }
 
-    .detail-body {
-      grid-template-columns: 1fr;
+
+    /* =============================================================================
+      RESET & BASE STYLES
+      ============================================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .detail-section--full {
-      grid-column: 1;
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
     }
 
-    .hero__title {
-      font-size: var(--font-size-2xl);
-    }
-  }
+    body  {
 
-  /* --- Mobile (max 600px) --- */
-  @media (max-width: 600px) {
-    :root {
-      --space-6: 1rem;
-      --catalog-grid-min: 150px;
+      background-color: var(--color-bg-page);
+      color: var(--color-text-primary);
+      font-family: var(--font-body);
+      font-size: var(--font-size-md);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+  body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle, white 1px, transparent 2px) 20px 30px,
+      radial-gradient(circle, white 1px, transparent 2px) 150px 100px,
+      radial-gradient(circle, white 1px, transparent 2px) 300px 200px;
+    background-size: 300px 300px;
+    animation: twinkle 4s infinite;
+    }
+    @keyframes twinkle {                
+    0%   { opacity: 0.3; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.3; }
+    }
+    a { 
+      color: var(--color-text-link);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover {
+      color: var(--color-accent-hover);
+      text-decoration: underline;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--color-text-heading);
+      line-height: 1.2;
+    }
+
+
+    /* =============================================================================
+      NAVIGATION BAR
+      ============================================================================= */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background-color: var(--color-bg-surface);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: var(--shadow-nav);
+      display: flex;
+      align-items: center;
     }
 
     .navbar__inner {
-      padding: 0 var(--space-4);
+      width: 100%;
+      max-width: var(--max-width-site);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
     }
 
+    /* Site wordmark / logo text */
+    .navbar__brand {
+      font-size: var(--font-size-xl);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .navbar__brand:hover {
+      color: var(--color-accent-hover);
+      text-decoration: none;
+    }
+
+    .navbar__links {
+      display: flex;
+      gap: var(--space-4);
+      align-items: center;
+      flex: 1;
+    }
+
+    .navbar__link {
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      transition: color var(--transition-fast), background-color var(--transition-fast);
+    }
+
+    .navbar__link:hover {
+      color: var(--color-text-primary);
+      background-color: var(--color-bg-elevated);
+      text-decoration: none;
+    }
+
+    .navbar__link--back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-weight: 600;
+    }
+
+
+    /* =============================================================================
+      SHARED LAYOUT HELPERS
+      ============================================================================= */
+    .container {
+      max-width: var(--max-width-site);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .page-main {
+      padding: var(--space-10) 0 var(--space-16) 0;
+    }
+
+
+    /* =============================================================================
+      BUTTONS
+      ============================================================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-md);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* Primary (accent) button */
+    .btn--primary {
+      background-color: var(--color-accent);
+      color: #ffffff;
+    }
+
+    .btn--primary:hover {
+      background-color: var(--color-accent-hover);
+      color: #ffffff;
+    }
+
+    /* Secondary / ghost button */
+    .btn--secondary {
+      background-color: var(--color-bg-elevated);
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+    }
+
+    .btn--secondary:hover {
+      background-color: var(--color-accent-dim);
+      border-color: var(--color-accent);
+      color: var(--color-text-heading);
+    }
+
+    /* Large size modifier */
+    .btn--lg {
+      padding: var(--space-4) var(--space-10);
+      font-size: var(--font-size-lg);
+      border-radius: var(--radius-lg);
+    }
+
+    /* Active / selected state for filter buttons */
+    .btn--active {
+      background-color: var(--color-accent);
+      color: #ffffff;
+      border-color: var(--color-accent);
+    }
+
+
+    /* =============================================================================
+      INDEX PAGE — Landing / Main Menu
+      ============================================================================= */
+
+    /* Full-height hero section */
     .hero {
-      padding: var(--space-10) var(--space-4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-16) var(--space-6);
+      min-height: calc(60vh - var(--nav-height));
+    }
+
+    .hero__eyebrow {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
     }
 
     .hero__title {
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-3xl);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--color-text-heading) 40%, var(--color-accent-hover));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--space-4);
     }
 
     .hero__subtitle {
-      font-size: var(--font-size-md);
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+      max-width: 540px;
+      margin-bottom: var(--space-6);
     }
 
+    .hero__desc {
+      font-size: var(--font-size-md);
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin-bottom: var(--space-8);
+      line-height: 1.7;
+    }
+
+    .hero__cta {
+      margin-bottom: var(--space-12);
+    }
+
+    /* Quick-stats row on index page */
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      justify-content: center;
+      padding: var(--space-8) var(--space-6);
+      border-top: 1px solid var(--color-border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      background-color: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-6);
+      text-align: center;
+      min-width: 100px;
+      flex: 1 1 100px;
+    }
+
+    .stat-card__value {
+      font-size: var(--font-size-2xl);
+      font-weight: 800;
+      color: var(--color-text-heading);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .stat-card__label {
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+    }
+
+
+    /* =============================================================================
+      CATALOG PAGE — Pokémon Grid
+      ============================================================================= */
+
+    /* Toolbar: search + filter + sort row */
     .catalog-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      align-items: flex-start;
+      margin-bottom: var(--space-6);
+    }
+
+    /* Search input wrapper */
+    .search-wrap {
+      flex: 1 1 200px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      background-color: var(--color-bg-input);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      color: var(--color-text-primary);
+      font-size: var(--font-size-md);
+      font-family: var(--font-body);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: var(--color-text-secondary);
+    }
+
+    .search-input:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px var(--color-accent-dim);
+    }
+
+    /* Row of filter / sort buttons */
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-secondary);
+      font-weight: 600;
+      margin-right: var(--space-1);
+    }
+
+    /* Filter / sort button base style */
+    .filter-btn {
+      padding: var(--space-2) var(--space-3);
+      background-color: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .filter-btn:hover {
+      background-color: var(--color-accent-dim);
+      border-color: var(--color-accent);
+      color: var(--color-text-primary);
+    }
+
+    .filter-btn.btn--active {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    /* Result count indicator */
+    .catalog-count {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    /* Pokémon grid layout */
+    .pokemon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--catalog-grid-min), 1fr));
+      gap: var(--space-5);
+    }
+
+    /* No-results message */
+    .catalog-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: var(--space-16);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-lg);
+    }
+
+
+    /* =============================================================================
+      POKÉMON CARD (used in catalog grid)
+      ============================================================================= */
+    .pokemon-card {
+      background-color: rgba(16, 29, 56, 0.55);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(101, 191, 255, 0.35);
+      border-top: 3px solid var(--color-tier-s);  
+      border-radius: 4px 24px 4px 24px;                
+      padding: var(--space-5);
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
+      box-shadow: 0 0 10px rgba(216, 236, 250, 0.45);
+    }
+
+    .pokemon-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    /* Card header row: number + tier badge */
+    .card__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card__number {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--color-text-secondary);
+      letter-spacing: 0.05em;
+    }
+
+    /* Pokémon name */
+    .card__name {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: var(--color-text-heading);
+      line-height: 1.2;
+    }
+    .card__img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 10px rgba(101, 191, 255, 0.5));
+    }
+    .card__img {
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+    .pokemon-card:hover .card__img {
+      filter: drop-shadow(0 0 18px rgba(255, 216, 107, 0.8));
+      transform: scale(1.08);
+    } 
+    /* Type badges row */
+    .card__types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    /* Roles (first 2, truncated) */
+    .card__roles {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      line-height: 1.4;
+      margin-top: auto; /* Push to bottom of card */
+    }
+
+
+    /* =============================================================================
+      TYPE BADGES
+      Shared across cards and detail page.
+      Each type gets a class derived from its lowercase name (e.g. .type-fire).
+      ============================================================================= */
+    .type-badge {
+      display: inline-block;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      /* text shadow for contrast on light type colors */
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* One class per type, using the variables defined in :root */
+    .type-normal   { background-color: var(--type-normal); }
+    .type-fire     { background-color: var(--type-fire); }
+    .type-water    { background-color: var(--type-water); }
+    .type-electric { background-color: var(--type-electric); color: #222; text-shadow: none; }
+    .type-grass    { background-color: var(--type-grass); color: #fff; }
+    .type-ice      { background-color: var(--type-ice); color: #333; text-shadow: none; }
+    .type-fighting { background-color: var(--type-fighting); }
+    .type-poison   { background-color: var(--type-poison); }
+    .type-ground   { background-color: var(--type-ground); color: #333; text-shadow: none; }
+    .type-flying   { background-color: var(--type-flying); }
+    .type-psychic  { background-color: var(--type-psychic); }
+    .type-bug      { background-color: var(--type-bug); }
+    .type-rock     { background-color: var(--type-rock); }
+    .type-ghost    { background-color: var(--type-ghost); }
+    .type-dragon   { background-color: var(--type-dragon); }
+    .type-dark     { background-color: var(--type-dark); }
+    .type-steel    { background-color: var(--type-steel); color: #333; text-shadow: none; }
+    .type-fairy    { background-color: var(--type-fairy); color: #333; text-shadow: none; }
+
+
+    /* =============================================================================
+      TIER BADGES
+      ============================================================================= */
+    .tier-badge {
+      display: inline-block;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tier-s    { color: var(--color-tier-s);      background-color: var(--color-tier-s-bg);      border: 1px solid var(--color-tier-s); }
+    .tier-a-plus { color: var(--color-tier-a-plus); background-color: var(--color-tier-a-plus-bg); border: 1px solid var(--color-tier-a-plus); }
+    .tier-a    { color: var(--color-tier-a);      background-color: var(--color-tier-a-bg);      border: 1px solid var(--color-tier-a); }
+    .tier-b-plus { color: var(--color-tier-b-plus); background-color: var(--color-tier-b-plus-bg); border: 1px solid var(--color-tier-b-plus); }
+    .tier-b    { color: var(--color-tier-b);      background-color: var(--color-tier-b-bg);      border: 1px solid var(--color-tier-b); }
+    .tier-c-plus { color: var(--color-tier-c-plus); background-color: var(--color-tier-c-plus-bg); border: 1px solid var(--color-tier-c-plus); }
+    .tier-c    { color: var(--color-tier-c);      background-color: var(--color-tier-c-bg);      border: 1px solid var(--color-tier-c); }
+
+
+    /* =============================================================================
+      STAT BARS (used on detail page)
+      ============================================================================= */
+    .stat-list {
+      display: flex;
       flex-direction: column;
       gap: var(--space-3);
     }
 
-    .filter-row {
-      gap: var(--space-2);
+    .stat-row {
+      display: grid;
+      grid-template-columns: 60px 38px 1fr;
+      align-items: center;
+      gap: var(--space-3);
     }
 
-    .stats-grid {
-      padding: var(--space-6) var(--space-4);
+    .stat-row__label {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      text-align: right;
     }
 
-    .stat-card {
-      min-width: 80px;
-      padding: var(--space-4);
+    .stat-row__value {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--color-text-primary);
+      text-align: right;
+    }
+
+    /* Stat bar track */
+    .stat-row__bar-track {
+      height: 10px;
+      background-color: var(--color-stat-bg);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    /* Animated fill — width set via inline style in JS */
+    .stat-row__bar-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      transition: width 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Stat-specific fill colors */
+    .stat-row--hp   .stat-row__bar-fill { background-color: var(--color-stat-hp); }
+    .stat-row--atk  .stat-row__bar-fill { background-color: var(--color-stat-atk); }
+    .stat-row--def  .stat-row__bar-fill { background-color: var(--color-stat-def); }
+    .stat-row--spa  .stat-row__bar-fill { background-color: var(--color-stat-spa); }
+    .stat-row--spd  .stat-row__bar-fill { background-color: var(--color-stat-spd); }
+    .stat-row--spe  .stat-row__bar-fill { background-color: var(--color-stat-spe); }
+
+
+    /* =============================================================================
+      DETAIL PAGE
+      ============================================================================= */
+
+    /* Breadcrumb / back navigation line */
+    .detail-back {
+      margin-bottom: var(--space-6);
+    }
+
+    /* Header section: name, number, types, tier */
+    .detail-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .detail-header__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .detail-header__number {
+      font-size: var(--font-size-sm);
+      font-family: var(--font-mono);
+      color: var(--color-text-secondary);
+      font-weight: 700;
+      letter-spacing: 0.06em;
     }
 
     .detail-header__name {
+      font-size: var(--font-size-2xl);
+      font-weight: 900;
+      color: var(--color-text-heading);
+      letter-spacing: -0.01em;
+    }
+
+    .detail-header__badges {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Grid layout for the content sections */
+    .detail-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+    }
+
+    /* A detail section block */
+    .detail-section {
+      background-color: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-6);
+    }
+
+    /* Section title */
+    .detail-section__title {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+    }
+
+    /* Sections that span the full width */
+    .detail-section--full {
+      grid-column: 1 / -1;
+    }
+
+    /* Plain text paragraphs within detail sections */
+    .detail-section__text {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-primary);
+      line-height: 1.7;
+    }
+
+    /* Chip / tag elements (items, moves, counters, synergies) */
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .chip {
+      display: inline-block;
+      padding: var(--space-1) var(--space-3);
+      background-color: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 500;
+      color: var(--color-text-primary);
+      white-space: nowrap;
+    }
+
+    /* Pokémon counter / synergy name chips (slightly highlighted) */
+    .chip--pokemon {
+      background-color: var(--color-accent-dim);
+      border-color: var(--color-accent);
+      color: var(--color-accent-hover);
+      font-weight: 600;
+    }
+
+    /* Role list items */
+    .role-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .role-item {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-primary);
+      padding-left: var(--space-4);
+      position: relative;
+    }
+
+    .role-item::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    /* 404/Not-found message on detail page */
+    .detail-not-found {
+      text-align: center;
+      padding: var(--space-16);
+    }
+
+    .detail-not-found h2 {
       font-size: var(--font-size-xl);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
     }
 
-    .stat-row {
-      grid-template-columns: 48px 32px 1fr;
-    }
-  }
 
-  /* --- Small mobile (max 380px) --- */
-  @media (max-width: 380px) {
-    :root {
-      --catalog-grid-min: 140px;
+    /* =============================================================================
+      RESPONSIVE BREAKPOINTS
+      ============================================================================= */
+
+    /* --- Tablet (max 900px) --- */
+    @media (max-width: 900px) {
+      :root {
+        --catalog-grid-min: 200px;
+      }
+
+      .detail-body {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-section--full {
+        grid-column: 1;
+      }
+
+      .hero__title {
+        font-size: var(--font-size-2xl);
+      }
     }
 
-    .btn--lg {
-      padding: var(--space-3) var(--space-6);
-      font-size: var(--font-size-md);
+    /* --- Mobile (max 600px) --- */
+    @media (max-width: 600px) {
+      :root {
+        --space-6: 1rem;
+        --catalog-grid-min: 150px;
+      }
+
+      .navbar__inner {
+        padding: 0 var(--space-4);
+      }
+
+      .hero {
+        padding: var(--space-10) var(--space-4);
+      }
+
+      .hero__title {
+        font-size: var(--font-size-xl);
+      }
+
+      .hero__subtitle {
+        font-size: var(--font-size-md);
+      }
+
+      .catalog-toolbar {
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+
+      .filter-row {
+        gap: var(--space-2);
+      }
+
+      .stats-grid {
+        padding: var(--space-6) var(--space-4);
+      }
+
+      .stat-card {
+        min-width: 80px;
+        padding: var(--space-4);
+      }
+
+      .detail-header__name {
+        font-size: var(--font-size-xl);
+      }
+
+      .stat-row {
+        grid-template-columns: 48px 32px 1fr;
+      }
     }
-  }
+
+    /* --- Small mobile (max 380px) --- */
+    @media (max-width: 380px) {
+      :root {
+        --catalog-grid-min: 140px;
+      }
+
+      .btn--lg {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--font-size-md);
+      }
+    }

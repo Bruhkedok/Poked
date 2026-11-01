@@ -204,6 +204,7 @@
           <span class="card__number">${formatCardNumber(pokemon.id)}</span>
           ${buildTierBadge(pokemon.tier)}
         </div>
+        <img class="card__img" src="${getImage(pokemon.name)}" alt="${pokemon.name}" loading="lazy">
         <div class="card__name">${pokemon.name}</div>
         <div class="card__types">${buildTypeBadges(pokemon.types)}</div>
         <div class="card__roles">${rolesText}</div>

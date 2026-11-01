@@ -1127,4 +1127,27 @@ const POKEMON = [
     tier: "B"
   }
 ];
-// End of POKEMON data array — 50 entries total
+const DEX = {
+  "Incineroar": 727, "Rillaboom": 812, "Flutter Mane": 987,
+  "Urshifu-Rapid-Strike": 10191, "Amoonguss": 591,
+  "Landorus-Therian": 10021, "Tornadus": 641,
+  "Ogerpon-Wellspring": 10273, "Ogerpon-Hearthflame": 10274,
+  "Ursaluna-Bloodmoon": 10272, "Chien-Pao": 1002, "Chi-Yu": 1004,
+  "Iron Hands": 992, "Farigiraf": 981, "Torkoal": 324,
+  "Gholdengo": 1000, "Kingambit": 983, "Dragonite": 149,
+  "Archaludon": 1018, "Pelipper": 279, "Grimmsnarl": 861,
+  "Sneasler": 903, "Maushold": 925, "Indeedee-F": 10186,
+  "Whimsicott": 547, "Raging Bolt": 1021, "Iron Bundle": 991,
+  "Hatterene": 858, "Annihilape": 979, "Volcarona": 637,
+  "Ninetales-Alola": 10104, "Palafin": 10256, "Garchomp": 445,
+  "Tyranitar": 248, "Salamence": 373, "Hydreigon": 635,
+  "Primarina": 730, "Basculegion": 902, "Politoed": 186,
+  "Glimmora": 970, "Scream Tail": 985, "Walking Wake": 1009,
+  "Iron Valiant": 1006, "Rotom-Wash": 10009, "Weezing-Galar": 10167,
+  "Porygon2": 233, "Gouging Fire": 1020, "Ogerpon-Cornerstone": 10275,
+  "Dondozo": 977, "Tatsugiri": 978
+};
+
+function getImage(name) {
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${DEX[name]}.png`;
+}
