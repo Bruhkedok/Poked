@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse all Gen 9 VGC / Doubles OU Pokémon — filter by tier, search by name, and sort by number, name, or tier." />
+  <title>Pokémon Catalog — POKED</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       NAVIGATION BAR
+       ================================================================ -->
+  <nav class="navbar" aria-label="Site navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="POKED home">POKED</a>
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html" class="navbar__link">Home</a></li>
+        <li><a href="catalog.html" class="navbar__link">Catalog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       MAIN CONTENT
+       ================================================================ -->
+  <main class="page-main">
+    <div class="container">
+
+      <!-- Page heading -->
+      <header style="margin-bottom: var(--space-6);">
+        <h1 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Pokémon Catalog</h1>
+        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+          Gen 9 Scarlet &amp; Violet — Doubles OU / VGC competitive reference. Click any card for full details.
+        </p>
+      </header>
+
+      <!-- Toolbar: search + tier filter + sort -->
+      <section class="catalog-toolbar" aria-label="Filter and sort controls">
+
+        <!-- Search -->
+        <div class="search-wrap">
+          <label for="search-input" class="visually-hidden">Search by name</label>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search by name…"
+            autocomplete="off"
+            aria-label="Search Pokémon by name"
+          />
+        </div>
+
+        <!-- Tier filter -->
+        <div class="filter-row" role="group" aria-label="Filter by tier">
+          <span class="filter-label">Tier:</span>
+          <!-- data-tier="all" means no filter; others match the tier field in data.js -->
+          <button class="filter-btn btn--active" data-tier="all">All</button>
+          <button class="filter-btn" data-tier="S">S</button>
+          <button class="filter-btn" data-tier="A+">A+</button>
+          <button class="filter-btn" data-tier="A">A</button>
+          <button class="filter-btn" data-tier="B+">B+</button>
+          <button class="filter-btn" data-tier="B">B</button>
+          <button class="filter-btn" data-tier="C+">C+</button>
+          <button class="filter-btn" data-tier="C">C</button>
+        </div>
+
+        <!-- Sort -->
+        <div class="filter-row" role="group" aria-label="Sort order">
+          <span class="filter-label">Sort:</span>
+          <!-- data-sort values: "id", "name", "tier" -->
+          <button class="filter-btn btn--active" data-sort="id">#</button>
+          <button class="filter-btn" data-sort="name">Name</button>
+          <button class="filter-btn" data-sort="tier">Tier</button>
+        </div>
+
+      </section>
+
+      <!-- Result count -->
+      <p class="catalog-count" id="catalog-count" aria-live="polite"></p>
+
+      <!-- Pokémon card grid — populated by JS -->
+      <section
+        class="pokemon-grid"
+        id="pokemon-grid"
+        aria-label="Pokémon cards"
+      ></section>
+
+    </div>
+  </main>
+
+  <!-- ================================================================
+       DATA + CATALOG SCRIPT
+       data.js must load before catalog.js logic runs.
+       ================================================================ -->
+  <script src="data.js"></script>
+  <script>
+    // ----------------------------------------------------------------
+    // CATALOG STATE
+    // Holds the current search query, active tier filter, and sort order.
+    // These are updated by event listeners and trigger a re-render.
+    // ----------------------------------------------------------------
+    const catalogState = {
+      query: '',      // Current search string (lowercase)
+      tier: 'all',    // Active tier filter ('all' or a tier string like 'S')
+      sort: 'id'      // Current sort key: 'id' | 'name' | 'tier'
+    };
+
+    // Tier sort order for the "tier" sort mode (best → worst)
+    const TIER_ORDER = { 'S': 0, 'A+': 1, 'A': 2, 'B+': 3, 'B': 4, 'C+': 5, 'C': 6 };
+
+    // ----------------------------------------------------------------
+    // UTILITY: Convert a tier string to a CSS class suffix
+    // e.g. "A+" → "a-plus",  "S" → "s",  "B+" → "b-plus"
+    // ----------------------------------------------------------------
+    function tierCssClass(tier) {
+      return tier.toLowerCase().replace('+', '-plus');
+    }
+
+    // ----------------------------------------------------------------
+    // UTILITY: Convert a type name to its CSS class
+    // e.g. "Fire" → "type-fire"
+    // ----------------------------------------------------------------
+    function typeCssClass(type) {
+      return 'type-' + type.toLowerCase();
+    }
+
+    // ----------------------------------------------------------------
+    // buildTypeBadges — Returns HTML string of type badge spans for a Pokémon
+    // ----------------------------------------------------------------
+    function buildTypeBadges(types) {
+      return types.map(function(t) {
+        return `<span class="type-badge ${typeCssClass(t)}">${t}</span>`;
+      }).join('');
+    }
+
+    // ----------------------------------------------------------------
+    // buildTierBadge — Returns HTML string of a tier badge span
+    // ----------------------------------------------------------------
+    function buildTierBadge(tier) {
+      return `<span class="tier-badge tier-${tierCssClass(tier)}">${tier}</span>`;
+    }
+
+    // ----------------------------------------------------------------
+    // formatCardNumber — Formats the id as a zero-padded string, e.g. 1 → "#01"
+    // ----------------------------------------------------------------
+    function formatCardNumber(id) {
+      return '#' + String(id).padStart(2, '0');
+    }
+
+    // ----------------------------------------------------------------
+    // getFilteredSorted — Returns a filtered and sorted copy of POKEMON
+    // based on current catalogState.
+    // ----------------------------------------------------------------
+    function getFilteredSorted() {
+      // 1. Filter by search query and tier
+      const filtered = POKEMON.filter(function(p) {
+        const matchesQuery = catalogState.query === '' ||
+          p.name.toLowerCase().includes(catalogState.query);
+        const matchesTier = catalogState.tier === 'all' ||
+          p.tier === catalogState.tier;
+        return matchesQuery && matchesTier;
+      });
+
+      // 2. Sort
+      filtered.sort(function(a, b) {
+        if (catalogState.sort === 'name') {
+          return a.name.localeCompare(b.name);
+        }
+        if (catalogState.sort === 'tier') {
+          const tierDiff = (TIER_ORDER[a.tier] ?? 99) - (TIER_ORDER[b.tier] ?? 99);
+          // Within the same tier, sort by id
+          return tierDiff !== 0 ? tierDiff : a.id - b.id;
+        }
+        // Default: sort by id
+        return a.id - b.id;
+      });
+
+      return filtered;
+    }
+
+    // ----------------------------------------------------------------
+    // createCard — Creates a Pokémon card anchor element from a Pokémon object.
+    // The card links to detail.html?id=N.
+    // ----------------------------------------------------------------
+    function createCard(pokemon) {
+      const card = document.createElement('a');
+      card.className = 'pokemon-card';
+      card.href = `detail.html?id=${pokemon.id}`;
+
+      // data-* attributes are used for future CSS targeting if needed
+      card.dataset.id   = pokemon.id;
+      card.dataset.name = pokemon.name.toLowerCase();
+      card.dataset.tier = pokemon.tier;
+
+      // Show only the first 2 roles, truncated if there are more
+      const displayRoles = pokemon.roles.slice(0, 2);
+      const rolesText    = displayRoles.join(' · ') +
+        (pokemon.roles.length > 2 ? ' …' : '');
+
+      card.innerHTML = `
+        <div class="card__header">
+          <span class="card__number">${formatCardNumber(pokemon.id)}</span>
+          ${buildTierBadge(pokemon.tier)}
+        </div>
+        <div class="card__name">${pokemon.name}</div>
+        <div class="card__types">${buildTypeBadges(pokemon.types)}</div>
+        <div class="card__roles">${rolesText}</div>
+      `;
+
+      return card;
+    }
+
+    // ----------------------------------------------------------------
+    // renderGrid — Clears and re-renders the grid based on current state.
+    // Also updates the result count display.
+    // ----------------------------------------------------------------
+    function renderGrid() {
+      const grid      = document.getElementById('pokemon-grid');
+      const countEl   = document.getElementById('catalog-count');
+      const results   = getFilteredSorted();
+
+      // Clear existing content
+      grid.innerHTML = '';
+
+      if (results.length === 0) {
+        // Show empty state
+        const empty = document.createElement('div');
+        empty.className = 'catalog-empty';
+        empty.textContent = 'No Pokémon match your search.';
+        grid.appendChild(empty);
+        countEl.textContent = '0 results';
+        return;
+      }
+
+      // Render cards
+      results.forEach(function(pokemon) {
+        grid.appendChild(createCard(pokemon));
+      });
+
+      // Update count label
+      countEl.textContent =
+        results.length === POKEMON.length
+          ? `Showing all ${results.length} Pokémon`
+          : `Showing ${results.length} of ${POKEMON.length} Pokémon`;
+    }
+
+    // ----------------------------------------------------------------
+    // EVENT LISTENERS — Search input
+    // Debounced: only re-renders 150ms after the user stops typing.
+    // ----------------------------------------------------------------
+    (function initSearch() {
+      const input = document.getElementById('search-input');
+      let debounceTimer;
+
+      input.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function() {
+          catalogState.query = input.value.trim().toLowerCase();
+          renderGrid();
+        }, 150);
+      });
+    })();
+
+    // ----------------------------------------------------------------
+    // EVENT LISTENERS — Tier filter buttons
+    // Uses event delegation on the toolbar element.
+    // ----------------------------------------------------------------
+    (function initTierFilters() {
+      document.querySelectorAll('[data-tier]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          // Update active state
+          document.querySelectorAll('[data-tier]').forEach(function(b) {
+            b.classList.remove('btn--active');
+          });
+          btn.classList.add('btn--active');
+
+          catalogState.tier = btn.dataset.tier;
+          renderGrid();
+        });
+      });
+    })();
+
+    // ----------------------------------------------------------------
+    // EVENT LISTENERS — Sort buttons
+    // ----------------------------------------------------------------
+    (function initSortButtons() {
+      document.querySelectorAll('[data-sort]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          // Update active state
+          document.querySelectorAll('[data-sort]').forEach(function(b) {
+            b.classList.remove('btn--active');
+          });
+          btn.classList.add('btn--active');
+
+          catalogState.sort = btn.dataset.sort;
+          renderGrid();
+        });
+      });
+    })();
+
+    // ----------------------------------------------------------------
+    // INITIAL RENDER — Run when the page first loads
+    // ----------------------------------------------------------------
+    renderGrid();
+  </script>
+
+</body>
+</html>

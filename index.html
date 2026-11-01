@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="POKED — Gen 9 Scarlet/Violet VGC & Doubles OU Pokémon competitive reference. Browse moves, roles, counters, synergies, and tier rankings." />
+  <title>POKED — Gen 9 VGC Reference</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       NAVIGATION BAR
+       ================================================================ -->
+  <nav class="navbar" aria-label="Site navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="POKED home">POKED</a>
+      <ul class="navbar__links" role="list">
+        <li><a href="catalog.html" class="navbar__link">Pokémon Catalog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       MAIN CONTENT
+       ================================================================ -->
+  <main class="page-main">
+
+    <!-- Hero / landing section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero__eyebrow">Competitive Reference</p>
+      <h1 class="hero__title" id="hero-title">POKED</h1>
+      <p class="hero__subtitle">Gen 9 VGC &amp; Doubles OU Pokémon Reference</p>
+      <p class="hero__desc">
+        A focused reference for competitive Pokémon players. Browse all 50 top Pokémon
+        from the Gen 9 Scarlet &amp; Violet Doubles OU / VGC meta — with base stats,
+        roles, abilities, movesets, Tera Types, checks &amp; counters, synergies, and
+        tier ratings at a glance.
+      </p>
+      <div class="hero__cta">
+        <a href="catalog.html" class="btn btn--primary btn--lg">
+          Browse Pokémon →
+        </a>
+      </div>
+    </section>
+
+    <!-- Quick stats section — counts computed from data.js inline script below -->
+    <section aria-labelledby="stats-heading">
+      <h2 id="stats-heading" class="visually-hidden">Pokémon Counts by Tier</h2>
+      <div class="stats-grid" id="stats-grid">
+        <!-- Populated by the inline script below -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       DATA + INLINE SCRIPT
+       Must come after <main> so the DOM is ready.
+       ================================================================ -->
+  <script src="data.js"></script>
+  <script>
+    /**
+     * Computes tier breakdowns from POKEMON data and renders the stats grid.
+     * No external dependencies — reads from the global POKEMON array in data.js.
+     */
+    (function renderStatsGrid() {
+      const grid = document.getElementById('stats-grid');
+      if (!grid) return;
+
+      // Count Pokémon per tier
+      const tierCounts = {};
+      POKEMON.forEach(function(p) {
+        tierCounts[p.tier] = (tierCounts[p.tier] || 0) + 1;
+      });
+
+      // Ordered list of tiers to display
+      const TIERS = ['S', 'A+', 'A', 'B+', 'B', 'C+', 'C'];
+
+      // Helper: map tier string to a CSS class suffix
+      function tierClass(tier) {
+        return 'tier-' + tier.toLowerCase().replace('+', '-plus');
+      }
+
+      // Build the total count card first
+      const totalCard = document.createElement('div');
+      totalCard.className = 'stat-card';
+      totalCard.innerHTML = `
+        <div class="stat-card__value">${POKEMON.length}</div>
+        <div class="stat-card__label">Total Pokémon</div>
+      `;
+      grid.appendChild(totalCard);
+
+      // Build one card per tier
+      TIERS.forEach(function(tier) {
+        const count = tierCounts[tier] || 0;
+        const card = document.createElement('div');
+        card.className = 'stat-card';
+        card.innerHTML = `
+          <div class="stat-card__value">
+            <span class="tier-badge ${tierClass(tier)}">${tier}</span>
+          </div>
+          <div class="stat-card__label">${count} Pokémon</div>
+        `;
+        grid.appendChild(card);
+      });
+    })();
+  </script>
+
+</body>
+</html>

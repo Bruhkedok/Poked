@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Title and description are updated dynamically via JS once the Pokémon is loaded -->
+  <title>Pokémon Detail — POKED</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       NAVIGATION BAR
+       ================================================================ -->
+  <nav class="navbar" aria-label="Site navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="POKED home">POKED</a>
+      <ul class="navbar__links" role="list">
+        <li>
+          <a href="catalog.html" class="navbar__link navbar__link--back">
+            ← Back to Catalog
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       MAIN CONTENT — populated entirely by JS below
+       ================================================================ -->
+  <main class="page-main" id="detail-root">
+    <div class="container">
+      <!-- Placeholder shown while JS is loading (should flash briefly at most) -->
+      <p style="color: var(--color-text-secondary); text-align: center; padding: var(--space-16) 0;">
+        Loading…
+      </p>
+    </div>
+  </main>
+
+  <!-- ================================================================
+       DATA + DETAIL SCRIPT
+       ================================================================ -->
+  <script src="data.js"></script>
+  <script>
+    // ----------------------------------------------------------------
+    // UTILITY FUNCTIONS
+    // ----------------------------------------------------------------
+
+    /**
+     * tierCssClass — Converts a tier string to a CSS class suffix.
+     * e.g. "A+" → "a-plus",  "S" → "s"
+     */
+    function tierCssClass(tier) {
+      return tier.toLowerCase().replace('+', '-plus');
+    }
+
+    /**
+     * typeCssClass — Converts a type name to its CSS class.
+     * e.g. "Fire" → "type-fire"
+     */
+    function typeCssClass(type) {
+      return 'type-' + type.toLowerCase();
+    }
+
+    /**
+     * buildTypeBadges — Returns an HTML string of type badge <span>s.
+     */
+    function buildTypeBadges(types) {
+      return types.map(function(t) {
+        return `<span class="type-badge ${typeCssClass(t)}">${t}</span>`;
+      }).join('');
+    }
+
+    /**
+     * buildTierBadge — Returns an HTML string for a tier badge.
+     */
+    function buildTierBadge(tier) {
+      return `<span class="tier-badge tier-${tierCssClass(tier)}">${tier}</span>`;
+    }
+
+    /**
+     * formatId — Zero-pads a Pokémon id to 2 digits with a hash prefix.
+     * e.g. 3 → "#03"
+     */
+    function formatId(id) {
+      return '#' + String(id).padStart(2, '0');
+    }
+
+    /**
+     * buildChips — Returns an HTML string of .chip elements from an array of strings.
+     * @param {string[]} items
+     * @param {string} [extraClass] — optional extra CSS class for each chip
+     */
+    function buildChips(items, extraClass) {
+      return items.map(function(item) {
+        const cls = extraClass ? 'chip ' + extraClass : 'chip';
+        return `<span class="${cls}">${item}</span>`;
+      }).join('');
+    }
+
+    /**
+     * buildStatBar — Returns an HTML string for one stat row (label, value, and bar).
+     * @param {string} label     — Display label (e.g. "HP")
+     * @param {string} key       — CSS modifier key (e.g. "hp")
+     * @param {number} value     — The stat value
+     * @param {number} maxValue  — The theoretical maximum (255) for proportional width
+     */
+    function buildStatBar(label, key, value, maxValue) {
+      const pct = Math.min(100, Math.round((value / maxValue) * 100));
+      return `
+        <div class="stat-row stat-row--${key}">
+          <span class="stat-row__label">${label}</span>
+          <span class="stat-row__value">${value}</span>
+          <div class="stat-row__bar-track" aria-hidden="true">
+            <div
+              class="stat-row__bar-fill"
+              style="width: ${pct}%;"
+              title="${label}: ${value}"
+            ></div>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * buildRoleList — Returns an HTML string of role list items.
+     */
+    function buildRoleList(roles) {
+      return roles.map(function(role) {
+        return `<div class="role-item">${role}</div>`;
+      }).join('');
+    }
+
+    // ----------------------------------------------------------------
+    // MAIN RENDER FUNCTION
+    // Reads ?id= from the URL, finds the Pokémon, and injects the full
+    // detail view into the page.
+    // ----------------------------------------------------------------
+
+    /**
+     * getPokemonFromURL — Reads the ?id=N URL parameter and finds the matching
+     * Pokémon object from the POKEMON array. Returns null if not found.
+     */
+    function getPokemonFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const idParam = params.get('id');
+      if (!idParam) return null;
+
+      const id = parseInt(idParam, 10);
+      if (isNaN(id)) return null;
+
+      // Find the Pokémon by its id field
+      return POKEMON.find(function(p) { return p.id === id; }) || null;
+    }
+
+    /**
+     * renderNotFound — Renders a friendly error when no matching Pokémon exists.
+     */
+    function renderNotFound() {
+      const root = document.getElementById('detail-root');
+      root.innerHTML = `
+        <div class="container">
+          <div class="detail-not-found">
+            <h2>Pokémon not found</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+              No Pokémon with that ID exists in the database.
+            </p>
+            <a href="catalog.html" class="btn btn--primary">← Back to Catalog</a>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * renderDetail — Builds and injects the full Pokémon detail page HTML.
+     * @param {Object} p — A Pokémon object from the POKEMON array
+     */
+    function renderDetail(p) {
+      // Update the browser tab title
+      document.title = `${p.name} — POKED`;
+
+      // Max stat value used to scale the bar widths (Gen game max is 255)
+      const STAT_MAX = 255;
+
+      // Build the full page HTML
+      const html = `
+        <div class="container">
+
+          <!-- ── Back link ────────────────────────────────────────── -->
+          <div class="detail-back">
+            <a href="catalog.html" class="btn btn--secondary">← Back to Catalog</a>
+          </div>
+
+          <!-- ── Header: name, number, types, tier ────────────────── -->
+          <header class="detail-header">
+            <div class="detail-header__meta">
+              <span class="detail-header__number">${formatId(p.id)}</span>
+              ${buildTierBadge(p.tier)}
+            </div>
+            <h1 class="detail-header__name">${p.name}</h1>
+            <div class="detail-header__badges">
+              ${buildTypeBadges(p.types)}
+            </div>
+          </header>
+
+          <!-- ── Detail sections grid ─────────────────────────────── -->
+          <div class="detail-body">
+
+            <!-- BASE STATS (full width) -->
+            <section class="detail-section detail-section--full" aria-labelledby="sec-stats">
+              <h2 class="detail-section__title" id="sec-stats">Base Stats</h2>
+              <div class="stat-list">
+                ${buildStatBar('HP',  'hp',  p.baseStats.hp,  STAT_MAX)}
+                ${buildStatBar('Atk', 'atk', p.baseStats.atk, STAT_MAX)}
+                ${buildStatBar('Def', 'def', p.baseStats.def, STAT_MAX)}
+                ${buildStatBar('SpA', 'spa', p.baseStats.spa, STAT_MAX)}
+                ${buildStatBar('SpD', 'spd', p.baseStats.spd, STAT_MAX)}
+                ${buildStatBar('Spe', 'spe', p.baseStats.spe, STAT_MAX)}
+              </div>
+            </section>
+
+            <!-- ROLES -->
+            <section class="detail-section" aria-labelledby="sec-roles">
+              <h2 class="detail-section__title" id="sec-roles">Roles</h2>
+              <div class="role-list">
+                ${buildRoleList(p.roles)}
+              </div>
+            </section>
+
+            <!-- ABILITIES -->
+            <section class="detail-section" aria-labelledby="sec-abilities">
+              <h2 class="detail-section__title" id="sec-abilities">Abilities</h2>
+              <p class="detail-section__text">${p.abilities}</p>
+            </section>
+
+            <!-- COMMON ITEMS -->
+            <section class="detail-section" aria-labelledby="sec-items">
+              <h2 class="detail-section__title" id="sec-items">Common Items</h2>
+              <div class="chip-list">
+                ${buildChips(p.items)}
+              </div>
+            </section>
+
+            <!-- COMMON MOVES -->
+            <section class="detail-section" aria-labelledby="sec-moves">
+              <h2 class="detail-section__title" id="sec-moves">Common Moves</h2>
+              <div class="chip-list">
+                ${buildChips(p.moves)}
+              </div>
+            </section>
+
+            <!-- PREFERRED TERA TYPES -->
+            <section class="detail-section" aria-labelledby="sec-tera">
+              <h2 class="detail-section__title" id="sec-tera">Preferred Tera Types</h2>
+              <div class="chip-list">
+                ${buildTypeBadges(p.teraTypes)}
+              </div>
+            </section>
+
+            <!-- STRENGTHS -->
+            <section class="detail-section" aria-labelledby="sec-strengths">
+              <h2 class="detail-section__title" id="sec-strengths">Strengths</h2>
+              <p class="detail-section__text">${p.strengths}</p>
+            </section>
+
+            <!-- WEAKNESSES -->
+            <section class="detail-section" aria-labelledby="sec-weaknesses">
+              <h2 class="detail-section__title" id="sec-weaknesses">Weaknesses</h2>
+              <p class="detail-section__text">${p.weaknesses}</p>
+            </section>
+
+            <!-- CHECKS & COUNTERS (full width) -->
+            <section class="detail-section detail-section--full" aria-labelledby="sec-checks">
+              <h2 class="detail-section__title" id="sec-checks">Checks &amp; Counters</h2>
+              <p class="detail-section__text">${p.checksAndCounters}</p>
+            </section>
+
+            <!-- POKÉMON COUNTERS -->
+            <section class="detail-section" aria-labelledby="sec-pokemon-counters">
+              <h2 class="detail-section__title" id="sec-pokemon-counters">Pokémon Counters</h2>
+              <div class="chip-list">
+                ${buildChips(p.pokemonCounters, 'chip--pokemon')}
+              </div>
+            </section>
+
+            <!-- SYNERGIES / TEAMMATES -->
+            <section class="detail-section" aria-labelledby="sec-synergies">
+              <h2 class="detail-section__title" id="sec-synergies">Synergies / Teammates</h2>
+              <div class="chip-list">
+                ${buildChips(p.synergies, 'chip--pokemon')}
+              </div>
+            </section>
+
+            <!-- PLAYSTYLE (full width) -->
+            <section class="detail-section detail-section--full" aria-labelledby="sec-playstyle">
+              <h2 class="detail-section__title" id="sec-playstyle">Playstyle</h2>
+              <p class="detail-section__text">${p.playstyle}</p>
+            </section>
+
+          </div><!-- /.detail-body -->
+        </div><!-- /.container -->
+      `;
+
+      // Inject into the page
+      const root = document.getElementById('detail-root');
+      root.innerHTML = html;
+    }
+
+    // ----------------------------------------------------------------
+    // ENTRY POINT — Run on page load
+    // ----------------------------------------------------------------
+    (function init() {
+      const pokemon = getPokemonFromURL();
+
+      if (!pokemon) {
+        renderNotFound();
+        return;
+      }
+
+      renderDetail(pokemon);
+    })();
+  </script>
+
+</body>
+</html>
