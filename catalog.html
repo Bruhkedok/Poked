@@ -206,10 +206,33 @@
         </div>
         <img class="card__img" src="${getImage(pokemon.name)}" alt="${pokemon.name}" loading="lazy">
         <div class="card__name">${pokemon.name}</div>
+        <button class="fav-btn" data-id="${pokemon.id}">☆</button>
         <div class="card__types">${buildTypeBadges(pokemon.types)}</div>
         <div class="card__roles">${rolesText}</div>
       `;
+      const favBtn = card.querySelector('.fav-btn');
+      favBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        favBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
+      let favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+      if (favs.includes(pokemon.id)) {
+        favs = favs.filter(id => id !== pokemon.id);
+        favBtn.textContent = '☆';
+      } else {
+        favs.push(pokemon.id);
+        favBtn.textContent = '★';
+      }
+
+      localStorage.setItem('favs', JSON.stringify(favs));
+    });
+      });
+      
+      
       return card;
     }
 
