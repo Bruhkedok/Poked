@@ -54,6 +54,15 @@
 
         <!-- Tier filter -->
         <div class="filter-row" role="group" aria-label="Filter by tier">
+          <div class="filter-row" role="group" aria-label="Filter by favorites">
+            <span class="filter-label">Favorites:</span>
+            <button class="filter-btn" id="favorites-filter">
+              ★ Favorites Only
+            </button>
+            <button class="filter-btn" id="reset-filters">
+        Reset Filters
+      </button>
+          </div>
           <span class="filter-label">Tier:</span>
           <!-- data-tier="all" means no filter; others match the tier field in data.js -->
           <button class="filter-btn btn--active" data-tier="all">All</button>
@@ -104,7 +113,8 @@
     const catalogState = {
       query: '',      // Current search string (lowercase)
       tier: 'all',    // Active tier filter ('all' or a tier string like 'S')
-      sort: 'id'      // Current sort key: 'id' | 'name' | 'tier'
+      sort: 'id',      // Current sort key: 'id' | 'name' | 'tier'
+      showFavorites: false // Whether to show only favorite Pokémon
     };
 
     // Tier sort order for the "tier" sort mode (best → worst)
@@ -155,12 +165,15 @@
     // ----------------------------------------------------------------
     function getFilteredSorted() {
       // 1. Filter by search query and tier
+      const favorites = JSON.parse(localStorage.getItem('favs')) || [];
       const filtered = POKEMON.filter(function(p) {
         const matchesQuery = catalogState.query === '' ||
           p.name.toLowerCase().includes(catalogState.query);
         const matchesTier = catalogState.tier === 'all' ||
           p.tier === catalogState.tier;
-        return matchesQuery && matchesTier;
+        const matchesFavorite = !catalogState.showFavorites ||
+          favorites.includes(p.id);
+        return matchesQuery && matchesTier && matchesFavorite;
       });
 
       // 2. Sort
@@ -209,15 +222,17 @@
         <button class="fav-btn" data-id="${pokemon.id}">☆</button>
         <div class="card__types">${buildTypeBadges(pokemon.types)}</div>
         <div class="card__roles">${rolesText}</div>
-      `;
+          <button class="quick-view-btn" data-id="${pokemon.id}">
+      Quick View
+    </button>
+        `;
+      
       const favBtn = card.querySelector('.fav-btn');
       favBtn.addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
-        favBtn.addEventListener('click', function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-
+    
+   
       let favs = JSON.parse(localStorage.getItem('favs')) || [];
 
       if (favs.includes(pokemon.id)) {
@@ -230,7 +245,25 @@
 
       localStorage.setItem('favs', JSON.stringify(favs));
     });
-      });
+        const quickViewBtn = card.querySelector('.quick-view-btn');
+
+    quickViewBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const modal = document.getElementById('quick-view');
+        const content = document.getElementById('quick-view-content');
+
+        content.innerHTML = `
+            <h2>${pokemon.name}</h2>
+            <img src="${getImage(pokemon.name)}" alt="${pokemon.name}" width="150">
+            <p>Tier: ${pokemon.tier}</p>
+            <p>Types: ${pokemon.types.join(' / ')}</p>
+            <p>Roles: ${pokemon.roles.join(' · ')}</p>
+        `;
+
+        modal.classList.add('active');
+    });
       
       
       return card;
@@ -257,7 +290,7 @@
         countEl.textContent = '0 results';
         return;
       }
-
+     
       // Render cards
       results.forEach(function(pokemon) {
         grid.appendChild(createCard(pokemon));
@@ -305,30 +338,73 @@
         });
       });
     })();
-
     // ----------------------------------------------------------------
+    // ----------------------------------------------------------------
+ 
+    //Favorite button  
+      const favoritesBtn = document.getElementById('favorites-filter');
+      console.count('Favorites listener registered');
+      favoritesBtn.addEventListener('click', function() {
+      catalogState.showFavorites = !catalogState.showFavorites;
+      console.log(catalogState.showFavorites);
+      favoritesBtn.classList.toggle(
+    'btn--active',
+    catalogState.showFavorites
+  );
+    renderGrid();
+      }); 
+      const resetBtn = document.getElementById('reset-filters');
+      resetBtn.addEventListener('click', function() {
+    document.querySelectorAll('[data-tier]').forEach(function(btn) {
+    btn.classList.toggle('btn--active', btn.dataset.tier === 'all');
+});
+        catalogState.query = '';
+    catalogState.tier = 'all';
+    catalogState.sort = 'id';
+    catalogState.showFavorites = false;
+document.querySelectorAll('[data-sort]').forEach(function(btn) {
+    btn.classList.toggle('btn--active', btn.dataset.sort === 'id');
+});
+
+    renderGrid();
+});
     // EVENT LISTENERS — Sort buttons
     // ----------------------------------------------------------------
-    (function initSortButtons() {
-      document.querySelectorAll('[data-sort]').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          // Update active state
-          document.querySelectorAll('[data-sort]').forEach(function(b) {
-            b.classList.remove('btn--active');
+      (function initSortButtons() {
+        document.querySelectorAll('[data-sort]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            // Update active state
+            document.querySelectorAll('[data-sort]').forEach(function(b) {
+              b.classList.remove('btn--active');
+            });
+            btn.classList.add('btn--active');
+
+            catalogState.sort = btn.dataset.sort;
+            renderGrid();
           });
-          btn.classList.add('btn--active');
-
-          catalogState.sort = btn.dataset.sort;
-          renderGrid();
         });
-      });
-    })();
+      })();
+document.addEventListener('DOMContentLoaded', function() {
+    const quickView = document.getElementById('quick-view');
+    const closeQuickView = document.getElementById('quick-view-close');
 
+    closeQuickView.addEventListener('click', function() {
+        quickView.classList.remove('active');
+    });
+});
     // ----------------------------------------------------------------
     // INITIAL RENDER — Run when the page first loads
     // ----------------------------------------------------------------
+    
     renderGrid();
+ 
   </script>
+ <div class="quick-view-overlay" id="quick-view">
+  <div class="quick-view-modal">
+    <button id="quick-view-close">✕</button>
 
+    <div id="quick-view-content"></div>
+  </div>
+</div>
 </body>
 </html>

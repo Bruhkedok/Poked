@@ -986,3 +986,41 @@
         font-size: var(--font-size-md);
       }
     }
+    /*QUICK WIEW */ 
+    .quick-view-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .quick-view-overlay.active {
+        display: flex;
+      }
+
+      .quick-view-modal {
+        background: var(--color-bg-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 16px;
+        padding: 24px;
+        width: min(90%, 450px);
+        position: relative;
+      }
+
+      #quick-view-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        color: var(--color-text-primary);
+        font-size: 20px;
+      }
+
+      #quick-view-content {
+        margin-top: 20px;
+      }
