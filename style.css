@@ -79,8 +79,8 @@
       --color-stat-bg:   #2a2a3a;   /* Stat bar track background */
 
       /* --- Typography --- */
-      --font-body: 'Space Grotesk', system-ui, sans-serif;
-      --font-heading: 'Cinzel', serif;
+      --font-body: 'Outfit', system-ui, sans-serif;
+      --font-heading: 'Space Grotesk', serif;
       --font-size-xs: 0.72rem;
       --font-size-sm: 0.85rem;
       --font-size-md: 1rem;
@@ -987,11 +987,27 @@
       }
     }
     /*QUICK WIEW */ 
+    .quick-view-btn {
+        background: #5f6fff;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 7px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease;
+}
+
+    .quick-view-btn:hover {
+      background: #7b8cff;
+    }
     .quick-view-overlay {
         display: none;
+        color: #00c896;
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(39, 38, 39, 0.8);
         z-index: 1000;
         justify-content: center;
         align-items: center;
@@ -1002,6 +1018,7 @@
       }
 
       .quick-view-modal {
+        color: #00c896;
         background: var(--color-bg-surface);
         border: 1px solid var(--color-border);
         border-radius: 16px;
