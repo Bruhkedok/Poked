@@ -228,6 +228,11 @@
         `;
       
       const favBtn = card.querySelector('.fav-btn');
+      const favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+        if (favs.includes(pokemon.id)) {
+        favBtn.textContent = '★';
+}
       favBtn.addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
